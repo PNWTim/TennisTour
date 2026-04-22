@@ -8,120 +8,121 @@
 <meta name="apple-mobile-web-app-title" content="Tennis Tour">
 <title>Tennis Tour</title>
 <style>
-:root {
-  --bg-primary:#ffffff;--bg-secondary:#f5f5f0;--bg-tertiary:#eeede8;
-  --bg-success:#eaf3de;--bg-warning:#faeeda;--bg-danger:#fcebeb;--bg-info:#e6f1fb;
-  --text-primary:#1a1a18;--text-secondary:#5f5e5a;--text-tertiary:#888780;
-  --text-success:#3b6d11;--text-warning:#854f0b;--text-danger:#a32d2d;--text-info:#185fa5;
-  --border-light:rgba(0,0,0,0.12);--border-medium:rgba(0,0,0,0.22);
-  --border-success:rgba(59,109,17,0.3);--border-warning:rgba(133,79,11,0.3);
-  --border-danger:rgba(163,45,45,0.3);--border-info:rgba(24,95,165,0.3);
-  --green:#2D6A4F;--radius-md:8px;--radius-lg:12px;
+:root{
+  --bp:#ffffff;--bs:#f5f5f0;--bt:#eeede8;
+  --bsu:#eaf3de;--bw:#faeeda;--bd:#fcebeb;--bi:#e6f1fb;
+  --tp:#1a1a18;--ts:#5f5e5a;--tt:#888780;
+  --tsu:#3b6d11;--tw:#854f0b;--td:#a32d2d;--ti:#185fa5;
+  --bl:rgba(0,0,0,0.12);--bm:rgba(0,0,0,0.22);
+  --bsu2:rgba(59,109,17,0.3);--bw2:rgba(133,79,11,0.3);
+  --bd2:rgba(163,45,45,0.3);--bi2:rgba(24,95,165,0.3);
+  --g:#2D6A4F;--rm:8px;--rl:12px;
 }
-@media(prefers-color-scheme:dark){
-  :root{
-    --bg-primary:#1c1c1a;--bg-secondary:#252523;--bg-tertiary:#2c2c2a;
-    --bg-success:#1a2e10;--bg-warning:#2e2008;--bg-danger:#2e1010;--bg-info:#0e2040;
-    --text-primary:#f0efe8;--text-secondary:#b4b2a9;--text-tertiary:#888780;
-    --text-success:#97c459;--text-warning:#ef9f27;--text-danger:#f09595;--text-info:#85b7eb;
-    --border-light:rgba(255,255,255,0.1);--border-medium:rgba(255,255,255,0.2);
-    --border-success:rgba(151,196,89,0.3);--border-warning:rgba(239,159,39,0.3);
-    --border-danger:rgba(240,149,149,0.3);--border-info:rgba(133,183,235,0.3);
-  }
-}
+@media(prefers-color-scheme:dark){:root{
+  --bp:#1c1c1a;--bs:#252523;--bt:#2c2c2a;
+  --bsu:#1a2e10;--bw:#2e2008;--bd:#2e1010;--bi:#0e2040;
+  --tp:#f0efe8;--ts:#b4b2a9;--tt:#888780;
+  --tsu:#97c459;--tw:#ef9f27;--td:#f09595;--ti:#85b7eb;
+  --bl:rgba(255,255,255,0.1);--bm:rgba(255,255,255,0.2);
+  --bsu2:rgba(151,196,89,0.3);--bw2:rgba(239,159,39,0.3);
+  --bd2:rgba(240,149,149,0.3);--bi2:rgba(133,183,235,0.3);
+}}
 *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;-webkit-tap-highlight-color:transparent}
-body{background:var(--bg-tertiary);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:0}
-.app{background:var(--bg-secondary);width:100%;max-width:390px;min-height:100vh;margin:0 auto}
-@media(min-width:420px){body{padding:20px 0;align-items:center}.app{border-radius:20px;min-height:auto;border:0.5px solid var(--border-light)}}
+body{background:var(--bt);min-height:100vh;display:flex;align-items:flex-start;justify-content:center}
+.app{background:var(--bs);width:100%;max-width:390px;min-height:100vh;margin:0 auto}
+@media(min-width:420px){body{padding:20px 0;align-items:center}.app{border-radius:20px;min-height:auto;border:0.5px solid var(--bl)}}
 .scr{display:none}.scr.on{display:block}
-.pbar{height:3px;background:var(--bg-tertiary)}.pfill{height:3px;background:var(--green);transition:width .3s}
-.topbar{background:var(--bg-primary);padding:10px 13px;border-bottom:0.5px solid var(--border-light);display:flex;align-items:center;justify-content:space-between}
-.tn{font-size:14px;font-weight:500;color:var(--text-primary)}.ts{font-size:11px;color:var(--text-tertiary);margin-top:1px}
-.badge{border-radius:20px;padding:4px 10px;font-size:11px;border:0.5px solid;white-space:nowrap}
-.badge-g{background:var(--bg-success);color:var(--text-success);border-color:var(--border-success)}
-.badge-i{background:var(--bg-info);color:var(--text-info);border-color:var(--border-info)}
-.badge-w{background:var(--bg-warning);color:var(--text-warning);border-color:var(--border-warning)}
+.pb{height:3px;background:var(--bt)}.pf{height:3px;background:var(--g);transition:width .3s}
+.tb{background:var(--bp);padding:10px 13px;border-bottom:0.5px solid var(--bl);display:flex;align-items:center;justify-content:space-between}
+.tn{font-size:14px;font-weight:500;color:var(--tp)}.ts2{font-size:11px;color:var(--tt);margin-top:1px}
+.bdg{border-radius:20px;padding:4px 10px;font-size:11px;border:0.5px solid;white-space:nowrap}
+.bg{background:var(--bsu);color:var(--tsu);border-color:var(--bsu2)}
+.bi2{background:var(--bi);color:var(--ti);border-color:var(--bi2)}
+.bw2{background:var(--bw);color:var(--tw);border-color:var(--bw2)}
+.br{background:var(--bd);color:var(--td);border-color:var(--bd2)}
 .pad{padding:11px}
-.card{background:var(--bg-primary);border-radius:var(--radius-lg);padding:11px;margin-bottom:9px;border:0.5px solid var(--border-light)}
-.sl{font-size:10px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.card{background:var(--bp);border-radius:var(--rl);padding:11px;margin-bottom:9px;border:0.5px solid var(--bl)}
+.sl{font-size:10px;color:var(--tt);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
-.sbox{background:var(--bg-secondary);border-radius:var(--radius-md);padding:8px;text-align:center}
-.sv{font-size:15px;font-weight:500;color:var(--text-primary)}.sl2{font-size:10px;color:var(--text-tertiary);margin-top:2px}
+.sb{background:var(--bs);border-radius:var(--rm);padding:8px;text-align:center}
+.sv{font-size:15px;font-weight:500;color:var(--tp)}.sl2{font-size:10px;color:var(--tt);margin-top:2px}
 .pill{display:inline-block;font-size:10px;border-radius:20px;padding:2px 7px;border:0.5px solid;white-space:nowrap}
-.p-g{background:var(--bg-success);color:var(--text-success);border-color:var(--border-success)}
-.p-r{background:var(--bg-danger);color:var(--text-danger);border-color:var(--border-danger)}
-.p-w{background:var(--bg-warning);color:var(--text-warning);border-color:var(--border-warning)}
-.p-i{background:var(--bg-info);color:var(--text-info);border-color:var(--border-info)}
-.p-n{background:var(--bg-secondary);color:var(--text-secondary);border-color:var(--border-medium)}
-.btn{width:100%;padding:13px;border-radius:var(--radius-lg);background:var(--green);color:#fff;border:none;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;margin-top:4px}
+.pg{background:var(--bsu);color:var(--tsu);border-color:var(--bsu2)}
+.pr{background:var(--bd);color:var(--td);border-color:var(--bd2)}
+.pw{background:var(--bw);color:var(--tw);border-color:var(--bw2)}
+.pi{background:var(--bi);color:var(--ti);border-color:var(--bi2)}
+.pn{background:var(--bs);color:var(--ts);border-color:var(--bm)}
+.btn{width:100%;padding:13px;border-radius:var(--rl);background:var(--g);color:#fff;border:none;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;margin-top:4px}
 .btn:disabled{opacity:.3;cursor:default}
-.btn-ghost{width:100%;padding:10px;border-radius:var(--radius-lg);background:transparent;color:var(--text-tertiary);border:0.5px solid var(--border-medium);font-size:12px;cursor:pointer;font-family:inherit;margin-top:7px}
-.opt{background:var(--bg-primary);border-radius:var(--radius-lg);padding:10px;border:0.5px solid var(--border-light);margin-bottom:7px;cursor:pointer;display:flex;gap:9px;align-items:flex-start}
-.opt.sel{border:2px solid var(--green);background:var(--bg-success)}
-.opt.sel .ot{color:var(--green)}
-.ot{font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:2px}
-.os{font-size:11px;color:var(--text-tertiary);line-height:1.4;margin-bottom:5px}
+.btn-o{width:100%;padding:10px;border-radius:var(--rl);background:transparent;color:var(--tt);border:0.5px solid var(--bm);font-size:12px;cursor:pointer;font-family:inherit;margin-top:7px}
+.btn-r{width:100%;padding:12px;border-radius:var(--rl);background:var(--bd);color:var(--td);border:0.5px solid var(--bd2);font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;margin-top:7px}
+.opt{background:var(--bp);border-radius:var(--rl);padding:10px;border:0.5px solid var(--bl);margin-bottom:7px;cursor:pointer;display:flex;gap:9px;align-items:flex-start}
+.opt.sel{border:2px solid var(--g);background:var(--bsu)}
+.opt.sel .ot{color:var(--g)}
+.ot{font-size:13px;font-weight:500;color:var(--tp);margin-bottom:2px}
+.os{font-size:11px;color:var(--tt);line-height:1.4;margin-bottom:5px}
 .ico{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ng{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px}
-.nc{background:var(--bg-primary);border-radius:var(--radius-lg);padding:9px;border:0.5px solid var(--border-light);cursor:pointer;display:flex;align-items:center;gap:8px}
-.nc.sel{border:2px solid var(--green);background:var(--bg-success)}
-.nc.sel .nn{color:var(--green)}
+.nc{background:var(--bp);border-radius:var(--rl);padding:9px;border:0.5px solid var(--bl);cursor:pointer;display:flex;align-items:center;gap:8px}
+.nc.sel{border:2px solid var(--g);background:var(--bsu)}
+.nc.sel .nn{color:var(--g)}
 .nf{font-size:20px;width:24px;text-align:center;flex-shrink:0}
-.nn{font-size:12px;font-weight:500;color:var(--text-primary)}.nb{font-size:10px;color:var(--text-tertiary);margin-top:1px}
-.ni{width:100%;font-size:22px;font-weight:500;color:var(--text-primary);background:transparent;border:none;outline:none;border-bottom:1.5px solid var(--border-medium);padding-bottom:8px;font-family:inherit}
-.ni::placeholder{color:var(--text-tertiary)}
-.qn{font-size:11px;border-radius:20px;padding:4px 9px;border:0.5px solid var(--border-medium);background:var(--bg-secondary);cursor:pointer;color:var(--text-secondary);display:inline-block;margin:0 4px 5px 0}
+.nn{font-size:12px;font-weight:500;color:var(--tp)}.nb2{font-size:10px;color:var(--tt);margin-top:1px}
+.ni{width:100%;font-size:22px;font-weight:500;color:var(--tp);background:transparent;border:none;outline:none;border-bottom:1.5px solid var(--bm);padding-bottom:8px;font-family:inherit}
+.ni::placeholder{color:var(--tt)}
+.qn{font-size:11px;border-radius:20px;padding:4px 9px;border:0.5px solid var(--bm);background:var(--bs);cursor:pointer;color:var(--ts);display:inline-block;margin:0 4px 5px 0}
 .ar{display:flex;align-items:center;gap:6px;margin-bottom:9px}
-.an{font-size:12px;color:var(--text-primary);width:84px;flex-shrink:0}
-.adj{width:27px;height:27px;border-radius:50%;border:0.5px solid var(--border-medium);background:var(--bg-secondary);color:var(--text-primary);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1}
+.an{font-size:12px;color:var(--tp);width:84px;flex-shrink:0}
+.adj{width:27px;height:27px;border-radius:50%;border:0.5px solid var(--bm);background:var(--bs);color:var(--tp);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1}
 .adj:disabled{opacity:.2;cursor:default}
 .av{font-size:13px;font-weight:500;width:26px;text-align:center;flex-shrink:0}
-.abw{flex:1;background:var(--bg-secondary);border-radius:3px;height:7px;position:relative;overflow:hidden}
-.ab1{position:absolute;top:0;left:0;height:7px}.ab2{position:absolute;top:0;height:7px;background:#BA7517}
-.ab3{position:absolute;top:0;height:7px;background:var(--green);border-radius:0 3px 3px 0}
-.atg{font-size:10px;color:var(--green);min-width:18px;text-align:right;flex-shrink:0}
-.wopt{background:var(--bg-primary);border-radius:var(--radius-lg);padding:11px;border:0.5px solid var(--border-light);margin-bottom:8px;cursor:pointer}
-.wopt.on{border:2px solid var(--green);background:var(--bg-success)}
-.wopt.on .wo-t{color:var(--green)}
-.wo-t{font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:2px}
-.wo-s{font-size:11px;color:var(--text-tertiary);line-height:1.4;margin-bottom:6px}
+.abw{flex:1;background:var(--bs);border-radius:3px;height:7px;position:relative;overflow:hidden}
+.ab1{position:absolute;top:0;left:0;height:7px}
+.ab2{position:absolute;top:0;height:7px;background:#BA7517}
+.ab3{position:absolute;top:0;height:7px;background:var(--g);border-radius:0 3px 3px 0}
+.atg{font-size:10px;color:var(--g);min-width:18px;text-align:right;flex-shrink:0}
+.wopt{background:var(--bp);border-radius:var(--rl);padding:11px;border:0.5px solid var(--bl);margin-bottom:8px;cursor:pointer}
+.wopt.on{border:2px solid var(--g);background:var(--bsu)}
+.wopt.on .wo-t{color:var(--g)}
+.wo-t{font-size:13px;font-weight:500;color:var(--tp);margin-bottom:2px}
+.wo-s{font-size:11px;color:var(--tt);line-height:1.4;margin-bottom:6px}
 .eb-row{display:flex;align-items:center;gap:7px;margin-bottom:4px}
-.eb-lbl{font-size:11px;color:var(--text-tertiary);width:80px;flex-shrink:0}
-.eb-bg{flex:1;background:var(--bg-secondary);border-radius:3px;height:6px}
+.eb-lbl{font-size:11px;color:var(--tt);width:80px;flex-shrink:0}
+.eb-bg{flex:1;background:var(--bs);border-radius:3px;height:6px}
 .eb-fill{height:6px;border-radius:3px;transition:width .4s}
 .eb-val{font-size:11px;font-weight:500;min-width:36px;text-align:right}
 .cal-row{display:flex;align-items:stretch;gap:7px;margin-bottom:3px}
-.cal-wk{font-size:10px;color:var(--text-tertiary);width:20px;text-align:right;flex-shrink:0;padding-top:5px}
+.cal-wk{font-size:10px;color:var(--tt);width:20px;text-align:right;flex-shrink:0;padding-top:5px}
 .cal-blk{flex:1;border-radius:5px;padding:4px 8px}
-.cb-n{font-size:11px;font-weight:500}.cb-s{font-size:10px;opacity:.8;margin-top:1px}.cb-date{font-size:9px;opacity:.65;margin-top:1px}
-.cal-month{font-size:9px;font-weight:500;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.09em;padding:6px 0 3px;border-top:0.5px solid var(--border-light);margin-top:2px}
+.cb-n{font-size:11px;font-weight:500}.cb-s{font-size:10px;opacity:.8;margin-top:1px}.cb-d{font-size:9px;opacity:.65;margin-top:1px}
+.cal-month{font-size:9px;font-weight:500;color:var(--tt);text-transform:uppercase;letter-spacing:.09em;padding:6px 0 3px;border-top:0.5px solid var(--bl);margin-top:2px}
 .cal-month:first-child{border-top:none;margin-top:0;padding-top:0}
-.mc-mini{background:var(--bg-secondary);border-radius:var(--radius-md);padding:7px 10px;margin-bottom:5px;display:flex;align-items:center;justify-content:space-between}
-.mc-full{background:var(--bg-primary);border-radius:var(--radius-lg);padding:11px;margin-bottom:9px;border:0.5px solid var(--border-light)}
-.scoreboard{background:var(--bg-secondary);border-radius:var(--radius-md);padding:10px;margin-bottom:9px}
-.sb-hdr{display:flex;font-size:10px;color:var(--text-tertiary);margin-bottom:5px;padding:0 3px}
-.sb-nc{flex:1}.sb-sc{width:30px;text-align:center;flex-shrink:0}
-.sb-row{display:flex;align-items:center;padding:5px 3px;border-radius:6px}
-.sb-row.wr{background:var(--bg-success)}
-.sb-player{flex:1;font-size:12px;font-weight:500}
-.sb-player.w{color:var(--text-success)}.sb-player.l{color:var(--text-secondary)}
-.sb-game{width:30px;text-align:center;font-size:13px;font-weight:500;flex-shrink:0}
-.sb-game.wg{color:var(--text-success)}.sb-game.lg{color:var(--text-secondary)}
-.vs-d{text-align:center;font-size:10px;color:var(--text-tertiary);padding:2px 0}
-.no-box{background:var(--bg-warning);border-radius:var(--radius-lg);padding:10px;margin-top:7px;border:0.5px solid var(--border-warning)}
-.no-lbl{font-size:10px;color:var(--text-warning);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
-.match-footer{background:var(--bg-primary);padding:11px;border-top:0.5px solid var(--border-light)}
+.mc-mini{background:var(--bs);border-radius:var(--rm);padding:7px 10px;margin-bottom:5px;display:flex;align-items:center;justify-content:space-between}
+.mc-full{background:var(--bp);border-radius:var(--rl);padding:11px;margin-bottom:9px;border:0.5px solid var(--bl)}
+.sboard{background:var(--bs);border-radius:var(--rm);padding:10px;margin-bottom:9px}
+.sbh{display:flex;font-size:10px;color:var(--tt);margin-bottom:5px;padding:0 3px}
+.sbnc{flex:1}.sbsc{width:30px;text-align:center;flex-shrink:0}
+.sbrow{display:flex;align-items:center;padding:5px 3px;border-radius:6px}
+.sbrow.wr{background:var(--bsu)}
+.sbpl{flex:1;font-size:12px;font-weight:500}
+.sbpl.w{color:var(--tsu)}.sbpl.l{color:var(--ts)}
+.sbgm{width:30px;text-align:center;font-size:13px;font-weight:500;flex-shrink:0}
+.sbgm.wg{color:var(--tsu)}.sbgm.lg{color:var(--ts)}
+.vsd{text-align:center;font-size:10px;color:var(--tt);padding:2px 0}
+.nob{background:var(--bw);border-radius:var(--rl);padding:10px;margin-top:7px;border:0.5px solid var(--bw2)}
+.nol{font-size:10px;color:var(--tw);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.mf{background:var(--bp);padding:11px;border-top:0.5px solid var(--bl)}
 .at-row{margin-bottom:6px}
 .at-top2{display:flex;justify-content:space-between;margin-bottom:3px;font-size:11px}
-.h-row{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:0.5px solid var(--border-light);font-size:11px}
+.h-row{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:0.5px solid var(--bl);font-size:11px}
 .h-row:last-child{border-bottom:none}
 .h-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.draw-row{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:0.5px solid var(--border-light);font-size:12px}
-.draw-row:last-child{border-bottom:none}
-.stat-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid var(--border-light);font-size:12px}
-.stat-row:last-child{border-bottom:none}
-.dr{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:0.5px solid var(--border-light);font-size:12px}
+.dr{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:0.5px solid var(--bl);font-size:12px}
 .dr:last-child{border-bottom:none}
+.sr{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid var(--bl);font-size:12px}
+.sr:last-child{border-bottom:none}
+.career-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:0.5px solid var(--bl);font-size:11px}
+.career-row:last-child{border-bottom:none}
 </style>
 </head>
 <body>
@@ -129,33 +130,32 @@ body{background:var(--bg-tertiary);min-height:100vh;display:flex;align-items:fle
 
 <!-- SPLASH -->
 <div class="scr on" id="s0">
-  <div class="pbar"><div class="pfill" style="width:0%"></div></div>
   <div style="padding:48px 16px 32px;text-align:center">
-    <div style="width:64px;height:64px;border-radius:50%;background:var(--bg-success);border:2px solid var(--green);margin:0 auto 18px;display:flex;align-items:center;justify-content:center">
+    <div style="width:64px;height:64px;border-radius:50%;background:var(--bsu);border:2px solid var(--g);margin:0 auto 18px;display:flex;align-items:center;justify-content:center">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="#2D6A4F" stroke-width="2"/><path d="M9 14l3.5 3.5L19 10" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
-    <div style="font-size:28px;font-weight:500;color:var(--text-primary);margin-bottom:8px">Tennis Tour</div>
-    <div style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:32px">Build your player. Choose your style, nationality, and spend 10 bonus points to shape your game. Then play a full ATP season.</div>
+    <div style="font-size:28px;font-weight:500;color:var(--tp);margin-bottom:8px">Tennis Tour</div>
+    <div style="font-size:13px;color:var(--ts);line-height:1.7;margin-bottom:12px">Build your player. Play a full ATP career across up to 20 seasons. Retire when ready — or when your body forces you to.</div>
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px">
+      <span class="pill pg">Up to 20 seasons</span>
+      <span class="pill pw">Age &amp; fitness decay</span>
+      <span class="pill pi">Retire from age 28</span>
+    </div>
     <button class="btn" onclick="show(1)">Create your player →</button>
   </div>
 </div>
 
 <!-- NAME -->
 <div class="scr" id="s1">
-  <div class="pbar"><div class="pfill" style="width:14%"></div></div>
-  <div class="topbar"><span class="tn">Step 1 · Name</span><span style="font-size:11px;color:var(--text-tertiary)">1 / 5</span></div>
+  <div class="pb"><div class="pf" style="width:14%"></div></div>
+  <div class="tb"><span class="tn">Step 1 · Name</span><span style="font-size:11px;color:var(--tt)">1/5</span></div>
   <div class="pad">
-    <div style="font-size:17px;font-weight:500;color:var(--text-primary);margin-bottom:14px">What do they call you?</div>
+    <div style="font-size:17px;font-weight:500;color:var(--tp);margin-bottom:14px">What do they call you?</div>
     <div class="card">
       <input class="ni" id="ni" placeholder="Enter your name" maxlength="22" oninput="onN()">
-      <div style="font-size:11px;color:var(--text-tertiary);margin-top:8px" id="nh">Up to 22 characters</div>
+      <div style="font-size:11px;color:var(--tt);margin-top:8px" id="nh">Up to 22 characters</div>
       <div style="margin-top:10px;line-height:2.2">
-        <span class="qn" onclick="sN('J. Rivera')">J. Rivera</span>
-        <span class="qn" onclick="sN('K. Tanaka')">K. Tanaka</span>
-        <span class="qn" onclick="sN('A. Petrov')">A. Petrov</span>
-        <span class="qn" onclick="sN('L. Okafor')">L. Okafor</span>
-        <span class="qn" onclick="sN('M. Dubois')">M. Dubois</span>
-        <span class="qn" onclick="sN('C. Osei')">C. Osei</span>
+        <span class="qn" onclick="sN('J. Rivera')">J. Rivera</span><span class="qn" onclick="sN('K. Tanaka')">K. Tanaka</span><span class="qn" onclick="sN('A. Petrov')">A. Petrov</span><span class="qn" onclick="sN('L. Okafor')">L. Okafor</span><span class="qn" onclick="sN('M. Dubois')">M. Dubois</span><span class="qn" onclick="sN('C. Osei')">C. Osei</span>
       </div>
     </div>
     <button class="btn" id="nb" onclick="show(2)" disabled>Continue →</button>
@@ -164,165 +164,177 @@ body{background:var(--bg-tertiary);min-height:100vh;display:flex;align-items:fle
 
 <!-- NATION -->
 <div class="scr" id="s2">
-  <div class="pbar"><div class="pfill" style="width:28%"></div></div>
-  <div class="topbar"><span class="tn">Step 2 · Nationality</span><span style="font-size:11px;color:var(--text-tertiary)">2 / 5</span></div>
+  <div class="pb"><div class="pf" style="width:28%"></div></div>
+  <div class="tb"><span class="tn">Step 2 · Nationality</span><span style="font-size:11px;color:var(--tt)">2/5</span></div>
   <div class="pad">
-    <div style="font-size:17px;font-weight:500;color:var(--text-primary);margin-bottom:5px">Where are you from?</div>
-    <div style="font-size:11px;color:var(--text-secondary);line-height:1.5;margin-bottom:13px">A permanent nationality bonus is applied on top of your style base — shown in amber on the attributes screen.</div>
+    <div style="font-size:17px;font-weight:500;color:var(--tp);margin-bottom:5px">Where are you from?</div>
+    <div style="font-size:11px;color:var(--ts);line-height:1.5;margin-bottom:13px">Permanent nationality bonus applied on top of your style base.</div>
     <div class="ng">
-      <div class="nc" id="n-Spain" onclick="pN('Spain',{movement:6})"><div class="nf">🇪🇸</div><div><div class="nn">Spain</div><div class="nb">+6 movement</div></div></div>
-      <div class="nc" id="n-USA" onclick="pN('USA',{forehand:6})"><div class="nf">🇺🇸</div><div><div class="nn">USA</div><div class="nb">+6 forehand</div></div></div>
-      <div class="nc" id="n-Australia" onclick="pN('Australia',{serve:6})"><div class="nf">🇦🇺</div><div><div class="nn">Australia</div><div class="nb">+6 serve</div></div></div>
-      <div class="nc" id="n-Serbia" onclick="pN('Serbia',{mental:6})"><div class="nf">🇷🇸</div><div><div class="nn">Serbia</div><div class="nb">+6 mental</div></div></div>
-      <div class="nc" id="n-France" onclick="pN('France',{backhand:4,mental:2})"><div class="nf">🇫🇷</div><div><div class="nn">France</div><div class="nb">+4 BH, +2 mental</div></div></div>
-      <div class="nc" id="n-Argentina" onclick="pN('Argentina',{movement:5,fitness:3})"><div class="nf">🇦🇷</div><div><div class="nn">Argentina</div><div class="nb">+5 move, +3 fit</div></div></div>
+      <div class="nc" id="n-Spain" onclick="pN('Spain',{movement:6})"><div class="nf">🇪🇸</div><div><div class="nn">Spain</div><div class="nb2">+6 movement</div></div></div>
+      <div class="nc" id="n-USA" onclick="pN('USA',{forehand:6})"><div class="nf">🇺🇸</div><div><div class="nn">USA</div><div class="nb2">+6 forehand</div></div></div>
+      <div class="nc" id="n-Australia" onclick="pN('Australia',{serve:6})"><div class="nf">🇦🇺</div><div><div class="nn">Australia</div><div class="nb2">+6 serve</div></div></div>
+      <div class="nc" id="n-Serbia" onclick="pN('Serbia',{mental:6})"><div class="nf">🇷🇸</div><div><div class="nn">Serbia</div><div class="nb2">+6 mental</div></div></div>
+      <div class="nc" id="n-France" onclick="pN('France',{backhand:4,mental:2})"><div class="nf">🇫🇷</div><div><div class="nn">France</div><div class="nb2">+4 BH +2 mental</div></div></div>
+      <div class="nc" id="n-Argentina" onclick="pN('Argentina',{movement:5,fitness:3})"><div class="nf">🇦🇷</div><div><div class="nn">Argentina</div><div class="nb2">+5 move +3 fit</div></div></div>
     </div>
     <button class="btn" id="natb" onclick="show(3)" disabled>Continue →</button>
-    <button class="btn-ghost" onclick="show(1)">← Back</button>
+    <button class="btn-o" onclick="show(1)">← Back</button>
   </div>
 </div>
 
 <!-- STYLE -->
 <div class="scr" id="s3">
-  <div class="pbar"><div class="pfill" style="width:43%"></div></div>
-  <div class="topbar"><span class="tn">Step 3 · Playing style</span><span style="font-size:11px;color:var(--text-tertiary)">3 / 5</span></div>
+  <div class="pb"><div class="pf" style="width:43%"></div></div>
+  <div class="tb"><span class="tn">Step 3 · Playing style</span><span style="font-size:11px;color:var(--tt)">3/5</span></div>
   <div class="pad">
-    <div style="font-size:17px;font-weight:500;color:var(--text-primary);margin-bottom:13px">How do you play?</div>
-    <div class="opt" id="st-baseline" onclick="pS('baseline')">
-      <div class="ico" style="background:var(--bg-success)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="6" width="12" height="2" rx="1" fill="#3B6D11"/><rect x="4" y="3" width="6" height="2" rx="1" fill="#3B6D11"/><rect x="4" y="9" width="6" height="2" rx="1" fill="#3B6D11"/></svg></div>
-      <div style="flex:1;min-width:0"><div class="ot">Baseliner</div><div class="os">FH 65, fitness 63, BH 58. Serve only 47. Clay specialist profile.</div><div><span class="pill p-g">Clay</span> <span class="pill p-r">Weak serve</span></div></div>
-    </div>
-    <div class="opt" id="st-allcourt" onclick="pS('allcourt')">
-      <div class="ico" style="background:var(--bg-info)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#185FA5" stroke-width="1.4"/><path d="M7 2v10M2 7h10" stroke="#185FA5" stroke-width="1.2" stroke-linecap="round"/></svg></div>
-      <div style="flex:1;min-width:0"><div class="ot">All-court</div><div class="os">Serve 58, FH 57, fitness 56. No weakness, no dominant surface.</div><div><span class="pill p-i">Versatile</span> <span class="pill p-w">No peak</span></div></div>
-    </div>
-    <div class="opt" id="st-serve" onclick="pS('serve')">
-      <div class="ico" style="background:var(--bg-warning)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2" stroke="#854F0B" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#854F0B"/></svg></div>
-      <div style="flex:1;min-width:0"><div class="ot">Serve-and-volley</div><div class="os">Serve 68, movement 57. Fitness 48, BH 46. Grass specialist.</div><div><span class="pill p-g">Grass</span> <span class="pill p-r">Clay struggles</span></div></div>
-    </div>
-    <div class="opt" id="st-counter" onclick="pS('counter')">
-      <div class="ico" style="background:var(--bg-danger)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 2L2 12" stroke="#A32D2D" stroke-width="1.8" stroke-linecap="round"/><path d="M2 2h5v5" stroke="#A32D2D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div style="flex:1;min-width:0"><div class="ot">Counter-puncher</div><div class="os">Movement 65, mental 63, fitness 62. Serve only 45.</div><div><span class="pill p-r">Iron defence</span> <span class="pill p-g">Outlasts everyone</span></div></div>
-    </div>
+    <div style="font-size:17px;font-weight:500;color:var(--tp);margin-bottom:13px">How do you play?</div>
+    <div class="opt" id="st-baseline" onclick="pS('baseline')"><div class="ico" style="background:var(--bsu)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="6" width="12" height="2" rx="1" fill="#3B6D11"/><rect x="4" y="3" width="6" height="2" rx="1" fill="#3B6D11"/><rect x="4" y="9" width="6" height="2" rx="1" fill="#3B6D11"/></svg></div><div style="flex:1;min-width:0"><div class="ot">Baseliner</div><div class="os">FH 65, fitness 63, BH 58. Serve only 47. Clay specialist.</div><div><span class="pill pg">Clay</span> <span class="pill pr">Weak serve</span></div></div></div>
+    <div class="opt" id="st-allcourt" onclick="pS('allcourt')"><div class="ico" style="background:var(--bi)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#185FA5" stroke-width="1.4"/><path d="M7 2v10M2 7h10" stroke="#185FA5" stroke-width="1.2" stroke-linecap="round"/></svg></div><div style="flex:1;min-width:0"><div class="ot">All-court</div><div class="os">Serve 58, FH 57, fitness 56. Versatile — no peak surface.</div><div><span class="pill pi">Versatile</span> <span class="pill pw">No peak</span></div></div></div>
+    <div class="opt" id="st-serve" onclick="pS('serve')"><div class="ico" style="background:var(--bw)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2" stroke="#854F0B" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="2" r="2" fill="#854F0B"/></svg></div><div style="flex:1;min-width:0"><div class="ot">Serve-and-volley</div><div class="os">Serve 68, movement 57. Fitness 48, BH 46. Grass specialist.</div><div><span class="pill pg">Grass</span> <span class="pill pr">Clay struggles</span></div></div></div>
+    <div class="opt" id="st-counter" onclick="pS('counter')"><div class="ico" style="background:var(--bd)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 2L2 12" stroke="#A32D2D" stroke-width="1.8" stroke-linecap="round"/><path d="M2 2h5v5" stroke="#A32D2D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div style="flex:1;min-width:0"><div class="ot">Counter-puncher</div><div class="os">Movement 65, mental 63, fitness 62. Serve only 45.</div><div><span class="pill pr">Iron defence</span> <span class="pill pg">Outlasts everyone</span></div></div></div>
     <button class="btn" id="stb" onclick="show(4)" disabled>Continue →</button>
-    <button class="btn-ghost" onclick="show(2)">← Back</button>
+    <button class="btn-o" onclick="show(2)">← Back</button>
   </div>
 </div>
 
 <!-- AGE -->
 <div class="scr" id="s4">
-  <div class="pbar"><div class="pfill" style="width:58%"></div></div>
-  <div class="topbar"><span class="tn">Step 4 · Starting age</span><span style="font-size:11px;color:var(--text-tertiary)">4 / 5</span></div>
+  <div class="pb"><div class="pf" style="width:58%"></div></div>
+  <div class="tb"><span class="tn">Step 4 · Starting age</span><span style="font-size:11px;color:var(--tt)">4/5</span></div>
   <div class="pad">
-    <div style="font-size:17px;font-weight:500;color:var(--text-primary);margin-bottom:5px">How old are you?</div>
-    <div style="font-size:11px;color:var(--text-secondary);line-height:1.5;margin-bottom:14px">Younger = longer runway, lower rank. Older = better resources from the start.</div>
+    <div style="font-size:17px;font-weight:500;color:var(--tp);margin-bottom:5px">How old are you?</div>
+    <div style="font-size:11px;color:var(--ts);line-height:1.5;margin-bottom:14px">Younger = longer career, lower start rank. Retire option unlocks at 28. Forced retirement if overall falls below 50.</div>
     <div class="card" style="text-align:center;padding:20px">
       <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:10px">
-        <button style="width:40px;height:40px;border-radius:50%;border:0.5px solid var(--border-medium);background:var(--bg-secondary);font-size:22px;cursor:pointer;color:var(--text-primary);font-family:inherit" onclick="chA(-1)">−</button>
-        <span style="font-size:50px;font-weight:500;color:var(--text-primary)" id="ad">18</span>
-        <button style="width:40px;height:40px;border-radius:50%;border:0.5px solid var(--border-medium);background:var(--bg-secondary);font-size:22px;cursor:pointer;color:var(--text-primary);font-family:inherit" onclick="chA(1)">+</button>
+        <button style="width:40px;height:40px;border-radius:50%;border:0.5px solid var(--bm);background:var(--bs);font-size:22px;cursor:pointer;color:var(--tp);font-family:inherit" onclick="chA(-1)">−</button>
+        <span style="font-size:50px;font-weight:500;color:var(--tp)" id="ad">18</span>
+        <button style="width:40px;height:40px;border-radius:50%;border:0.5px solid var(--bm);background:var(--bs);font-size:22px;cursor:pointer;color:var(--tp);font-family:inherit" onclick="chA(1)">+</button>
       </div>
-      <div style="font-size:12px;color:var(--text-secondary)" id="ah">Age 18 · Rank #520 · $12K starting funds</div>
+      <div style="font-size:12px;color:var(--ts)" id="ah">Age 18 · Rank #520 · $12K · Up to 20 seasons</div>
     </div>
     <button class="btn" onclick="show(5)">Continue →</button>
-    <button class="btn-ghost" onclick="show(3)">← Back</button>
+    <button class="btn-o" onclick="show(3)">← Back</button>
   </div>
 </div>
 
 <!-- GOAL -->
 <div class="scr" id="s5">
-  <div class="pbar"><div class="pfill" style="width:72%"></div></div>
-  <div class="topbar"><span class="tn">Step 5 · Career goal</span><span style="font-size:11px;color:var(--text-tertiary)">5 / 5</span></div>
+  <div class="pb"><div class="pf" style="width:72%"></div></div>
+  <div class="tb"><span class="tn">Step 5 · Career goal</span><span style="font-size:11px;color:var(--tt)">5/5</span></div>
   <div class="pad">
-    <div style="font-size:17px;font-weight:500;color:var(--text-primary);margin-bottom:13px">What's your legacy?</div>
-    <div class="opt" id="g-no1" onclick="pG('no1','World #1')">
-      <div class="ico" style="background:var(--bg-info)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#185FA5" stroke-width="1.4"/><circle cx="7" cy="7" r="2" fill="#185FA5"/></svg></div>
-      <div style="flex:1;min-width:0"><div class="ot">World number one</div><div class="os">Reach #1 and hold it for at least one week.</div></div>
-    </div>
-    <div class="opt" id="g-slam" onclick="pG('slam','Slam hunter')">
-      <div class="ico" style="background:var(--bg-success)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.6 3.3 3.6.5-2.6 2.6.6 3.6L7 9.4l-3.2 1.6.6-3.6L1.8 4.8l3.6-.5z" fill="#2D6A4F"/></svg></div>
-      <div style="flex:1;min-width:0"><div class="ot">Slam hunter</div><div class="os">Grand Slam titles above all else — legacy over ranking.</div></div>
-    </div>
-    <div class="opt" id="g-long" onclick="pG('long','Longevity')">
-      <div class="ico" style="background:var(--bg-warning)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11l3-4 3 2.5 4-6" stroke="#854F0B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div style="flex:1;min-width:0"><div class="ot">Longevity legend</div><div class="os">Play until 38+. Titles across three decades.</div></div>
-    </div>
+    <div style="font-size:17px;font-weight:500;color:var(--tp);margin-bottom:13px">What's your legacy?</div>
+    <div class="opt" id="g-no1" onclick="pG('no1','World #1')"><div class="ico" style="background:var(--bi)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#185FA5" stroke-width="1.4"/><circle cx="7" cy="7" r="2" fill="#185FA5"/></svg></div><div style="flex:1;min-width:0"><div class="ot">World number one</div><div class="os">Reach #1 and hold it for at least one week.</div></div></div>
+    <div class="opt" id="g-slam" onclick="pG('slam','Slam hunter')"><div class="ico" style="background:var(--bsu)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.6 3.3 3.6.5-2.6 2.6.6 3.6L7 9.4l-3.2 1.6.6-3.6L1.8 4.8l3.6-.5z" fill="#2D6A4F"/></svg></div><div style="flex:1;min-width:0"><div class="ot">Slam hunter</div><div class="os">Grand Slam titles above all else.</div></div></div>
+    <div class="opt" id="g-long" onclick="pG('long','Longevity')"><div class="ico" style="background:var(--bw)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11l3-4 3 2.5 4-6" stroke="#854F0B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div style="flex:1;min-width:0"><div class="ot">Longevity legend</div><div class="os">Play until 38+. Titles across three decades.</div></div></div>
     <button class="btn" id="gb" onclick="show(6)" disabled>Continue →</button>
-    <button class="btn-ghost" onclick="show(4)">← Back</button>
+    <button class="btn-o" onclick="show(4)">← Back</button>
   </div>
 </div>
 
 <!-- ALLOC -->
 <div class="scr" id="s6">
-  <div class="pbar"><div class="pfill" style="width:86%"></div></div>
-  <div class="topbar"><span class="tn">Bonus points</span><span style="font-size:11px;color:var(--text-tertiary)">Pre-season</span></div>
+  <div class="pb"><div class="pf" style="width:86%"></div></div>
+  <div class="tb"><span class="tn">Bonus points</span><span style="font-size:11px;color:var(--tt)">Pre-season</span></div>
   <div class="pad">
-    <div style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:9px">Spend your 10 bonus points on top of your style base and nationality bonus (amber). Max +12 on any single attribute.</div>
-    <div style="background:var(--bg-primary);border-radius:var(--radius-md);padding:8px 11px;margin-bottom:9px;display:flex;align-items:center;justify-content:space-between;border:0.5px solid var(--border-light)">
-      <span style="font-size:13px;color:var(--text-secondary)">Points remaining</span>
+    <div style="font-size:12px;color:var(--ts);line-height:1.5;margin-bottom:9px">Spend 10 bonus points on top of your style base and nationality bonus (amber). Max +12 on any attribute.</div>
+    <div style="background:var(--bp);border-radius:var(--rm);padding:8px 11px;margin-bottom:9px;display:flex;align-items:center;justify-content:space-between;border:0.5px solid var(--bl)">
+      <span style="font-size:13px;color:var(--ts)">Points remaining</span>
       <span style="font-size:22px;font-weight:500" id="pl">10</span>
     </div>
-    <div id="nat-note" style="display:none;background:var(--bg-warning);border-radius:var(--radius-md);padding:8px 11px;margin-bottom:9px;border:0.5px solid var(--border-warning);font-size:11px;color:var(--text-warning);line-height:1.5"></div>
+    <div id="nat-note" style="display:none;background:var(--bw);border-radius:var(--rm);padding:8px 11px;margin-bottom:9px;border:0.5px solid var(--bw2);font-size:11px;color:var(--tw);line-height:1.5"></div>
     <div class="card">
       <div class="sl">Attributes</div>
       <div style="display:flex;gap:12px;margin-bottom:9px;flex-wrap:wrap">
-        <div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text-tertiary)"><div style="width:10px;height:4px;background:var(--border-medium);border-radius:1px"></div>Style base</div>
-        <div id="nat-leg" style="display:none;flex-direction:row;align-items:center;gap:4px;font-size:10px;color:var(--text-tertiary)"><div style="width:10px;height:4px;background:#BA7517;border-radius:1px"></div>Nat bonus</div>
-        <div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text-tertiary)"><div style="width:10px;height:4px;background:var(--green);border-radius:1px"></div>Your pts</div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--tt)"><div style="width:10px;height:4px;background:var(--bm);border-radius:1px"></div>Style base</div>
+        <div id="nat-leg" style="display:none;flex-direction:row;align-items:center;gap:4px;font-size:10px;color:var(--tt)"><div style="width:10px;height:4px;background:#BA7517;border-radius:1px"></div>Nat bonus</div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--tt)"><div style="width:10px;height:4px;background:var(--g);border-radius:1px"></div>Your pts</div>
       </div>
       <div id="arows"></div>
     </div>
     <button class="btn" onclick="show(7)">Choose a coach →</button>
-    <button class="btn-ghost" onclick="show(5)">← Back</button>
+    <button class="btn-o" onclick="show(5)">← Back</button>
   </div>
 </div>
 
 <!-- COACH -->
 <div class="scr" id="s7">
-  <div class="pbar"><div class="pfill" style="width:95%"></div></div>
-  <div class="topbar"><span class="tn">Choose a coach</span><span style="font-size:11px;color:var(--text-tertiary)">Final step</span></div>
+  <div class="pb"><div class="pf" style="width:95%"></div></div>
+  <div class="tb"><span class="tn">Choose a coach</span><span style="font-size:11px;color:var(--tt)">Final step</span></div>
   <div class="pad">
-    <div style="font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:10px">Monthly cost deducted throughout the season. Starting funds: <span id="funds-lbl" style="font-weight:500;color:var(--text-primary)">—</span></div>
+    <div style="font-size:12px;color:var(--ts);line-height:1.5;margin-bottom:10px">Monthly cost deducted throughout the season. Starting funds: <span id="funds-lbl" style="font-weight:500;color:var(--tp)">—</span></div>
     <div id="copts"></div>
     <div id="cimpact" style="display:none" class="card">
       <div class="sl">Budget impact</div>
-      <div class="dr"><span style="color:var(--text-secondary)">Monthly cost</span><span style="color:var(--text-danger);font-weight:500" id="cicost">—</span></div>
-      <div class="dr"><span style="color:var(--text-secondary)">Runway without prize money</span><span style="color:var(--text-warning);font-weight:500" id="cirun">—</span></div>
+      <div class="sr"><span style="color:var(--ts)">Monthly cost</span><span style="color:var(--td);font-weight:500" id="cicost">—</span></div>
+      <div class="sr"><span style="color:var(--ts)">Runway without prize $</span><span style="color:var(--tw);font-weight:500" id="cirun">—</span></div>
     </div>
     <button class="btn" id="coachb" onclick="startSeason()" disabled>Begin Season 1 →</button>
-    <button class="btn-ghost" onclick="show(6)">← Back</button>
+    <button class="btn-o" onclick="show(6)">← Back</button>
+  </div>
+</div>
+
+<!-- OFFSEASON -->
+<div class="scr" id="sc-offseason">
+  <div class="tb">
+    <div><div class="tn" id="off-title">Offseason</div><div class="ts2" id="off-sub">—</div></div>
+    <div class="bdg bw2" id="off-badge">—</div>
+  </div>
+  <div class="pad">
+    <div id="off-warning" style="display:none;background:var(--bd);border-radius:var(--rm);padding:9px 11px;margin-bottom:9px;border:0.5px solid var(--bd2);font-size:12px;color:var(--td);line-height:1.5"></div>
+    <div class="card">
+      <div class="sl">Season <span id="off-snum">—</span> summary</div>
+      <div id="off-season-stats"></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div class="sl" style="margin-bottom:0">Offseason training</div>
+        <span style="font-size:11px;color:var(--tt)">Points remaining: <strong id="off-pool">10</strong></span>
+      </div>
+      <div style="font-size:11px;color:var(--ts);margin-bottom:9px;line-height:1.5" id="off-decay-note"></div>
+      <div id="off-arows"></div>
+    </div>
+    <div class="card">
+      <div class="sl">Coach</div>
+      <div id="off-copts"></div>
+    </div>
+    <div id="off-retire-box" style="display:none;background:var(--bd);border-radius:var(--rl);padding:11px;margin-bottom:9px;border:0.5px solid var(--bd2)">
+      <div style="font-size:13px;font-weight:500;color:var(--td);margin-bottom:5px">Consider retirement?</div>
+      <div style="font-size:11px;color:var(--td);line-height:1.5;margin-bottom:10px" id="off-retire-msg">You are 28. You can retire now or continue your career.</div>
+      <button class="btn-r" onclick="retirePlayer()">Retire and see career summary</button>
+    </div>
+    <button class="btn" id="off-continue-btn" onclick="beginNextSeason()">Begin Season <span id="off-next-snum">2</span> →</button>
   </div>
 </div>
 
 <!-- DASHBOARD -->
 <div class="scr" id="sc-dash">
-  <div class="topbar">
+  <div class="tb">
     <div style="display:flex;align-items:center;gap:8px">
-      <div id="av" style="width:30px;height:30px;border-radius:50%;background:var(--bg-success);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--green)">??</div>
-      <div><div class="tn" id="dash-name">—</div><div class="ts" id="dash-sub">—</div></div>
+      <div id="av" style="width:30px;height:30px;border-radius:50%;background:var(--bsu);border:1.5px solid var(--g);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--g)">??</div>
+      <div><div class="tn" id="dash-name">—</div><div class="ts2" id="dash-sub">—</div></div>
     </div>
-    <div class="badge badge-g" id="dash-badge">S1 · Jan</div>
+    <div class="bdg bg" id="dash-badge">S1</div>
   </div>
   <div class="pad">
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px">
-        <div><div style="font-size:10px;color:var(--text-tertiary);margin-bottom:2px">World ranking</div><div style="font-size:38px;font-weight:500;color:var(--text-primary);line-height:1" id="d-rank">#520</div></div>
-        <div style="text-align:right"><div style="font-size:10px;color:var(--text-tertiary);margin-bottom:3px">Goal</div><span class="pill p-i" id="d-goal">—</span></div>
+        <div><div style="font-size:10px;color:var(--tt);margin-bottom:2px">World ranking</div><div style="font-size:38px;font-weight:500;color:var(--tp);line-height:1" id="d-rank">#—</div></div>
+        <div style="text-align:right"><div style="font-size:10px;color:var(--tt);margin-bottom:3px">Goal</div><span class="pill pi" id="d-goal">—</span></div>
       </div>
       <div class="g4">
-        <div class="sbox"><div class="sv" id="d-wl">0–0</div><div class="sl2">W–L</div></div>
-        <div class="sbox"><div class="sv" id="d-pts">0</div><div class="sl2">Pts</div></div>
-        <div class="sbox"><div class="sv" id="d-funds">$12K</div><div class="sl2">Funds</div></div>
-        <div class="sbox"><div class="sv" id="d-ovr">—</div><div class="sl2">Overall</div></div>
+        <div class="sb"><div class="sv" id="d-wl">0–0</div><div class="sl2">W–L</div></div>
+        <div class="sb"><div class="sv" id="d-pts">0</div><div class="sl2">Pts</div></div>
+        <div class="sb"><div class="sv" id="d-funds">—</div><div class="sl2">Funds</div></div>
+        <div class="sb"><div class="sv" id="d-ovr">—</div><div class="sl2">Overall</div></div>
       </div>
     </div>
-    <div style="background:var(--bg-primary);border-radius:var(--radius-md);padding:7px 11px;margin-bottom:9px;display:flex;align-items:center;gap:9px;border:0.5px solid var(--border-light)">
-      <span style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">Energy</span>
-      <div style="flex:1;background:var(--bg-secondary);border-radius:3px;height:7px"><div id="d-ebar" style="height:7px;border-radius:3px;background:var(--green);width:90%;transition:width .4s"></div></div>
-      <span style="font-size:11px;font-weight:500;min-width:40px;text-align:right;color:var(--green)" id="d-eval">90/100</span>
+    <div style="background:var(--bp);border-radius:var(--rm);padding:7px 11px;margin-bottom:9px;display:flex;align-items:center;gap:9px;border:0.5px solid var(--bl)">
+      <span style="font-size:11px;color:var(--tt);white-space:nowrap">Energy</span>
+      <div style="flex:1;background:var(--bs);border-radius:3px;height:7px"><div id="d-ebar" style="height:7px;border-radius:3px;background:var(--g);width:90%;transition:width .4s"></div></div>
+      <span style="font-size:11px;font-weight:500;min-width:40px;text-align:right;color:var(--g)" id="d-eval">90/100</span>
     </div>
-    <div id="tip-box" style="display:none;background:var(--bg-warning);border-radius:var(--radius-md);padding:8px 11px;margin-bottom:9px;border:0.5px solid var(--border-warning);font-size:11px;color:var(--text-warning);line-height:1.6"></div>
-    <div class="card"><div class="sl">Season 1 calendar</div><div id="cal-display"></div></div>
+    <div id="tip-box" style="display:none;background:var(--bw);border-radius:var(--rm);padding:8px 11px;margin-bottom:9px;border:0.5px solid var(--bw2);font-size:11px;color:var(--tw);line-height:1.6"></div>
+    <div class="card"><div class="sl">Season <span id="d-snum">1</span> calendar</div><div id="cal-display"></div></div>
     <div class="sl" id="opts-label" style="margin-bottom:8px">—</div>
     <div id="week-options"></div>
     <div class="card">
@@ -330,7 +342,7 @@ body{background:var(--bg-tertiary);min-height:100vh;display:flex;align-items:fle
       <div class="eb-row"><span class="eb-lbl">Current</span><div class="eb-bg"><div class="eb-fill" id="ep-cur"></div></div><span class="eb-val" id="ep-cur-v"></span></div>
       <div class="eb-row"><span class="eb-lbl" id="ep-b-lbl">If R1 exit</span><div class="eb-bg"><div class="eb-fill" id="ep-b"></div></div><span class="eb-val" id="ep-b-v"></span></div>
       <div class="eb-row"><span class="eb-lbl" id="ep-c-lbl">If deep run</span><div class="eb-bg"><div class="eb-fill" id="ep-c"></div></div><span class="eb-val" id="ep-c-v"></span></div>
-      <div style="font-size:11px;color:var(--text-tertiary);margin-top:6px;line-height:1.5" id="ep-note">Select an option.</div>
+      <div style="font-size:11px;color:var(--tt);margin-top:6px;line-height:1.5" id="ep-note">Select an option.</div>
     </div>
     <div class="card"><div class="sl">Attributes</div><div id="attr-display"></div></div>
     <div class="card" id="history-card" style="display:none"><div class="sl">Recent results</div><div id="history-list"></div></div>
@@ -340,66 +352,62 @@ body{background:var(--bg-tertiary);min-height:100vh;display:flex;align-items:fle
 
 <!-- MATCH -->
 <div class="scr" id="sc-match">
-  <div class="topbar">
-    <div><div class="tn" id="m-title">—</div><div class="ts" id="m-sub">—</div></div>
-    <div class="badge badge-i" id="m-badge">—</div>
+  <div class="tb">
+    <div><div class="tn" id="m-title">—</div><div class="ts2" id="m-sub">—</div></div>
+    <div class="bdg bi2" id="m-badge">—</div>
   </div>
   <div class="pad" id="m-scroll">
     <div class="card"><div class="sl">Draw</div><div id="draw-rows"></div></div>
     <div id="match-feed"></div>
   </div>
-  <div class="match-footer" id="match-footer" style="display:none"></div>
+  <div class="mf" id="match-footer" style="display:none"></div>
 </div>
 
-<!-- REVIEW -->
-<div class="scr" id="sc-review">
-  <div class="topbar"><div><div class="tn">Season 1 review</div><div class="ts" id="rv-sub">—</div></div><div class="badge badge-g">Complete</div></div>
-  <div class="pad" id="rv-body"></div>
+<!-- CAREER REVIEW -->
+<div class="scr" id="sc-career">
+  <div class="tb"><div><div class="tn">Career complete</div><div class="ts2" id="cr-sub">—</div></div><div class="bdg bg">Retired</div></div>
+  <div class="pad" id="cr-body"></div>
 </div>
 
 </div>
 <script>
-/* ── STYLE BASES ── */
-var SB={
-  baseline:{serve:47,forehand:65,backhand:58,movement:52,fitness:63,mental:55},
-  allcourt:{serve:58,forehand:57,backhand:54,movement:55,fitness:56,mental:53},
-  serve:   {serve:68,forehand:54,backhand:46,movement:57,fitness:48,mental:52},
-  counter: {serve:45,forehand:50,backhand:60,movement:65,fitness:62,mental:63}
-};
+/* ══════════════════════════════════════════
+   CONSTANTS & LOOKUP TABLES
+══════════════════════════════════════════ */
+var SB={baseline:{serve:47,forehand:65,backhand:58,movement:52,fitness:63,mental:55},allcourt:{serve:58,forehand:57,backhand:54,movement:55,fitness:56,mental:53},serve:{serve:68,forehand:54,backhand:46,movement:57,fitness:48,mental:52},counter:{serve:45,forehand:50,backhand:60,movement:65,fitness:62,mental:63}};
 var SL={baseline:'Baseliner',allcourt:'All-court',serve:'Serve-and-volley',counter:'Counter-puncher'};
-var GL={no1:'World #1',slam:'Slam hunter',long:'Longevity'};
 var AD={16:{rank:640,funds:8000},17:{rank:580,funds:10000},18:{rank:520,funds:12000},19:{rank:460,funds:15000},20:{rank:380,funds:20000},21:{rank:320,funds:26000},22:{rank:280,funds:32000}};
-var AH={16:'Age 16 · Rank #640 · $8K funds',17:'Age 17 · Rank #580 · $10K funds',18:'Age 18 · Rank #520 · $12K funds',19:'Age 19 · Rank #460 · $15K funds',20:'Age 20 · Rank #380 · $20K funds',21:'Age 21 · Rank #320 · $26K funds',22:'Age 22 · Rank #280 · $32K funds'};
-var COACHES=[
-  {key:'walsh', name:'D. Walsh',  cost:800,  desc:'All-court development. Former top-80. Best for early-career on a budget.',pills:['Budget-safe','All-round']},
-  {key:'patel', name:'R. Patel',  cost:1200, desc:'Serve and hard-court specialist. Builds your weapon fast.',pills:['Serve specialist','Mid-range']},
-  {key:'laurent',name:'C. Laurent',cost:2000,desc:'Clay maestro, 12 years on tour. Best long-term if the budget holds.',pills:['5-star coaching','Burns budget']}
-];
-
-/* ── CREATION STATE ── */
-var C={name:'',nation:'',nb:{},style:'',goal:'',goalLbl:'',age:18,attrs:{},bspt:{},ck:'',cc:0};
-var POOL=10;
-
-/* ── PLAYER STATE (set on startSeason) ── */
-var P={};
-
-/* ── HELPERS ── */
+var AH={16:'Age 16 · Rank #640 · $8K · Up to 22 seasons',17:'Age 17 · Rank #580 · $10K · Up to 21 seasons',18:'Age 18 · Rank #520 · $12K · Up to 20 seasons',19:'Age 19 · Rank #460 · $15K · Up to 19 seasons',20:'Age 20 · Rank #380 · $20K · Up to 18 seasons',21:'Age 21 · Rank #320 · $26K · Up to 17 seasons',22:'Age 22 · Rank #280 · $32K · Up to 16 seasons'};
+var COACHES=[{key:'walsh',name:'D. Walsh',cost:800,desc:'All-court development. Former top-80. Best for early-career on a budget.',pills:['Budget-safe','All-round']},{key:'patel',name:'R. Patel',cost:1200,desc:'Serve and hard-court specialist. Builds your weapon fast.',pills:['Serve specialist','Mid-range']},{key:'laurent',name:'C. Laurent',cost:2000,desc:'Clay maestro. 12 years on tour. Best long-term investment.',pills:['5-star coaching','Burns budget']}];
 var AN={serve:'Serve',forehand:'Forehand',backhand:'Backhand',movement:'Movement',fitness:'Fitness',mental:'Mental'};
 var AC={serve:'#378ADD',forehand:'#2D6A4F',backhand:'#2D6A4F',movement:'#BA7517',fitness:'#E24B4A',mental:'#888780'};
-function ec(v){return v>=70?'var(--green)':v>=40?'var(--text-warning)':'var(--text-danger)';}
+
+/* Age-based decay per season: fitness and movement decline from age 28 */
+function getDecay(age){
+  if(age<28)return{};
+  var yrs=age-27;
+  return{fitness:Math.min(yrs*1.2,8),movement:Math.min(yrs*0.8,6),serve:Math.min(yrs*0.3,3),mental:0,forehand:0,backhand:0};
+}
+
+var NRG={regular:{R128:4,R64:4,R32:5,R16:5,QF:6,SF:7,F:7},slam:{R128:5,R64:5,R32:6,R16:7,QF:8,SF:9,F:9}};
+function nrgRange(tier,struct){var s=tier==='Grand Slam';var t=s?NRG.slam:NRG.regular;return{min:t[struct[0]]||5,max:struct.reduce(function(a,r){return a+(t[r]||5);},0)};}
+function nrgForRound(tier,rnd){return(tier==='Grand Slam'?NRG.slam:NRG.regular)[rnd]||5;}
+function pts2rank(cp){var a=[[0,700],[300,500],[600,380],[1000,300],[1500,220],[2000,142],[2500,110],[3000,82],[3500,62],[4000,48],[5000,32],[6500,20],[9000,11],[13000,5]];cp=Math.max(0,cp);for(var i=1;i<a.length;i++){if(cp<=a[i][0]){var t=(cp-a[i-1][0])/(a[i][0]-a[i-1][0]);return Math.max(1,Math.round(a[i-1][1]+(a[i][1]-a[i-1][1])*t));}}return 1;}
+function calcSeed(rank,ds){var cut=ds>=128?32:ds>=64?16:8;return rank<=cut?rank:null;}
+function nrgRangePill(tier,struct){var r=nrgRange(tier,struct);return '\u2212'+r.min+' to \u2212'+r.max+' energy';}
+function surfMod(surface,style){if(style==='serve'){if(surface==='Grass')return 6;if(surface==='Clay')return -5;if(surface==='Hard (indoor)')return 2;return 1;}if(style==='baseline'){if(surface==='Clay')return 4;if(surface==='Grass')return -3;return 0;}if(style==='counter'){if(surface==='Clay')return 3;if(surface==='Grass')return -2;return 0;}return 0;}
+function ec(v){return v>=70?'var(--g)':v>=40?'var(--tw)':'var(--td)';}
 function ff(n){if(n>=1000000)return '$'+Math.round(n/100000)/10+'M';if(n>=1000)return '$'+Math.round(n/100)/10+'K';return '$'+Math.round(n);}
 function ss(sets){return sets.map(function(s){var tb=(s[0]===7&&s[1]===6)||(s[0]===6&&s[1]===7);return s[0]+'\u2013'+s[1]+(tb?'(TB)':'');}).join(' ');}
 function goScr(id){document.querySelectorAll('.scr').forEach(function(s){s.className='scr';});document.getElementById(id).className='scr on';window.scrollTo(0,0);}
 function ovr(){return Math.round(Object.values(P.attrs).reduce(function(a,b){return a+b;},0)/6);}
 
-/* ── CREATION FLOW ── */
-function show(n){
-  document.querySelectorAll('.scr').forEach(function(s){s.className='scr';});
-  document.getElementById('s'+n).className='scr on';
-  window.scrollTo(0,0);
-  if(n===6)buildAlloc();
-  if(n===7)buildCoach();
-}
+/* ══════════════════════════════════════════
+   CREATION STATE
+══════════════════════════════════════════ */
+var C={name:'',nation:'',nb:{},style:'',goal:'',goalLbl:'',age:18,attrs:{},bspt:{},ck:'',cc:0};
+var POOL=10;
+function show(n){document.querySelectorAll('.scr').forEach(function(s){s.className='scr';});document.getElementById('s'+n).className='scr on';window.scrollTo(0,0);if(n===6)buildAlloc();if(n===7)buildCoach();}
 function onN(){var v=document.getElementById('ni').value.trim();C.name=v;document.getElementById('nh').textContent=(22-v.length)+' characters remaining';document.getElementById('nb').disabled=v.length<2;}
 function sN(n){document.getElementById('ni').value=n;C.name=n;document.getElementById('nb').disabled=false;document.getElementById('nh').textContent=(22-n.length)+' characters remaining';}
 function pN(nat,bonus){document.querySelectorAll('.nc').forEach(function(c){c.className='nc';});document.getElementById('n-'+nat).className='nc sel';C.nation=nat;C.nb=bonus;document.getElementById('natb').disabled=false;}
@@ -420,7 +428,7 @@ function buildAlloc(){
 function renderA(){
   var base=SB[C.style]||SB.allcourt,nb=C.nb||{},left=bonusLeft();
   document.getElementById('pl').textContent=left;
-  document.getElementById('pl').style.color=left===0?'var(--green)':left<=2?'var(--text-danger)':'var(--text-primary)';
+  document.getElementById('pl').style.color=left===0?'var(--g)':left<=2?'var(--td)':'var(--tp)';
   document.getElementById('arows').innerHTML=Object.keys(AN).map(function(k){
     var b=base[k],n=(nb[k])||0,bs=C.bspt[k]||0,tot=b+n+bs;
     return '<div class="ar"><span class="an">'+AN[k]+'</span>'
@@ -435,103 +443,220 @@ function adjA(k,d){var bs=C.bspt[k]||0;if(d>0&&bonusLeft()<=0)return;if(d>0&&bs>
 function buildCoach(){
   var ad=AD[C.age]||AD[18];
   document.getElementById('funds-lbl').textContent='$'+ad.funds.toLocaleString();
-  document.getElementById('copts').innerHTML=COACHES.map(function(c){
-    return '<div class="opt" id="co-'+c.key+'" onclick="pC(\''+c.key+'\','+c.cost+')">'
-      +'<div class="ico" style="background:var(--bg-success)"><span style="font-size:11px;font-weight:500;color:var(--green)">'+c.name.split(' ')[0][0]+c.name.split(' ')[1][0]+'</span></div>'
-      +'<div style="flex:1;min-width:0"><div class="ot">'+c.name+'</div><div class="os">'+c.desc+'</div>'
-      +'<div style="font-size:11px;color:var(--text-warning);font-weight:500;margin-bottom:4px">$'+c.cost.toLocaleString()+'/month</div>'
-      +'<div>'+c.pills.map(function(p){return '<span class="pill p-n">'+p+'</span> ';}).join('')+'</div></div></div>';
-  }).join('');
+  document.getElementById('copts').innerHTML=COACHES.map(function(c){return '<div class="opt" id="co-'+c.key+'" onclick="pC(\''+c.key+'\','+c.cost+')">'+'<div class="ico" style="background:var(--bsu)"><span style="font-size:11px;font-weight:500;color:var(--g)">'+c.name.split(' ')[0][0]+c.name.split(' ')[1][0]+'</span></div>'+'<div style="flex:1;min-width:0"><div class="ot">'+c.name+'</div><div class="os">'+c.desc+'</div>'+'<div style="font-size:11px;color:var(--tw);font-weight:500;margin-bottom:4px">$'+c.cost.toLocaleString()+'/month</div>'+'<div>'+c.pills.map(function(p){return '<span class="pill pn">'+p+'</span> ';}).join('')+'</div></div></div>';}).join('');
 }
-function pC(k,cost){
-  C.ck=k;C.cc=cost;
-  COACHES.forEach(function(c){document.getElementById('co-'+c.key).className='opt'+(c.key===k?' sel':'');});
-  var ad=AD[C.age]||AD[18];
-  document.getElementById('cicost').textContent='−$'+cost.toLocaleString()+'/mo';
-  document.getElementById('cirun').textContent=Math.floor(ad.funds/cost)+' months';
-  document.getElementById('cimpact').style.display='block';
-  document.getElementById('coachb').disabled=false;
-}
+function pC(k,cost){C.ck=k;C.cc=cost;COACHES.forEach(function(c){document.getElementById('co-'+c.key).className='opt'+(c.key===k?' sel':'');});var ad=AD[C.age]||AD[18];document.getElementById('cicost').textContent='−$'+cost.toLocaleString()+'/mo';document.getElementById('cirun').textContent=Math.floor(ad.funds/cost)+' months';document.getElementById('cimpact').style.display='block';document.getElementById('coachb').disabled=false;}
 
-/* ── SEASON SETUP ── */
-var NRG_MATCH={regular:{R128:4,R64:4,R32:5,R16:5,QF:6,SF:7,F:7},slam:{R128:5,R64:5,R32:6,R16:7,QF:8,SF:9,F:9}};
-function nrgRange(tier,struct){var s=tier==='Grand Slam';var t=s?NRG_MATCH.slam:NRG_MATCH.regular;return{min:t[struct[0]]||5,max:struct.reduce(function(a,r){return a+(t[r]||5);},0)};}
-function nrgForRound(tier,rnd){return(tier==='Grand Slam'?NRG_MATCH.slam:NRG_MATCH.regular)[rnd]||5;}
-function pts2rank(cp){var a=[[0,700],[300,500],[600,380],[1000,300],[1500,220],[2000,142],[2500,110],[3000,82],[3500,62],[4000,48],[5000,32],[6500,20],[9000,11],[13000,5]];cp=Math.max(0,cp);for(var i=1;i<a.length;i++){if(cp<=a[i][0]){var t=(cp-a[i-1][0])/(a[i][0]-a[i-1][0]);return Math.max(1,Math.round(a[i-1][1]+(a[i][1]-a[i-1][1])*t));}}return 1;}
-function calcSeed(rank,ds){var cut=ds>=128?32:ds>=64?16:8;return rank<=cut?rank:null;}
-function nrgRangePill(tier,struct){var r=nrgRange(tier,struct);return '\u2212'+r.min+' to \u2212'+r.max+' energy';}
-function surfMod(surface,style){
-  if(style==='serve'){if(surface==='Grass')return 6;if(surface==='Clay')return -5;if(surface==='Hard (indoor)')return 2;return 1;}
-  if(style==='baseline'){if(surface==='Clay')return 4;if(surface==='Grass')return -3;return 0;}
-  if(style==='counter'){if(surface==='Clay')return 3;if(surface==='Grass')return -2;return 0;}
-  return 0;
-}
+/* ══════════════════════════════════════════
+   PLAYER & CAREER STATE
+══════════════════════════════════════════ */
+var P={};
+var CAREER={seasons:[],totalWins:0,totalLosses:0,totalTitles:0,totalSlams:0,bestRank:999,careerPts:0,totalFunds:0};
+
+/* ══════════════════════════════════════════
+   SEASON CALENDAR FACTORY
+══════════════════════════════════════════ */
+var S250=['R32','R16','QF','SF','F'],S500=['R32','R16','QF','SF','F'],SM=['R64','R32','R16','QF','SF','F'],SGS=['R128','R64','R32','R16','QF','SF','F'];
 function Tr(uid,lbl,dsc,g,xp){return{id:'train-'+uid,label:lbl,desc:dsc,pills:['+10 energy'].concat(xp||[]),energyType:'fixed',energyVal:10,skillGains:g||{}};}
 function Re(lbl,dsc,xg){return{id:'rest',label:lbl||'Rest week',desc:dsc||'Full recovery.',pills:['+40 energy'],energyType:'fixed',energyVal:40,skillGains:Object.assign({mental:1},xg||{})};}
-var NAMES_HARD=['B. Salas','M. Delgado','H. Johansson','C. Moreau','T. Hirano','B. Kamau','J. Okonkwo','F. Nkosi','T. Reyes','W. Li','G. Osei','A. Solis','D. Lindqvist','S. Okonkwo','R. Dupont','K. Nakamura','B. Chen','R. Bauer','R. Lopes','K. Ramos','M. Müller','P. Rashid','C. Martin'];
-var NAMES_CLAY=['P. Albanese','G. Marchetti','C. Bravo','O. Dubois','W. Khoury','T. Souza','J. Costa','T. Santos','P. Alves','M. Vargas','L. Castellano','E. Ferri','A. Reyes'];
-var NAMES_GRASS=['T. Eriksson','B. Koch','S. Lund','L. Beck','R. Dupont','P. Rashid','N. Johansson','M. Müller','G. Fraser','C. Henley'];
-var STYLES_LIST=['Baseliner','All-court','Serve-and-volley','Counter-puncher','Clay specialist'];
-var SCOUT={Baseliner:['Heavy topspin to BH','Patient — attack short ball','Weak on fast low balls'],'All-court':['No obvious weakness','Strong returner','Watch early-ball DTL'],'Serve-and-volley':['Big serve — get return in','Pass low cross-court','Attack second serve'],'Counter-puncher':['Retrieves everything','Waits for errors','Shorten points with serve'],'Clay specialist':['Elite on clay — patience','Loops to BH all day','Inside-out FH is key']};
-var used=[];
-function pickName(pool){var avail=pool.filter(function(n){return used.indexOf(n)<0;});if(!avail.length){used=[];avail=pool;}var n=avail[Math.floor(Math.random()*avail.length)];used.push(n);return n;}
-var PTS={'Grand Slam':{F:1200,SF:720,QF:360,R16:180,R32:90,R64:45,R128:10},'Masters 1000':{F:600,SF:360,QF:180,R16:90,R32:45,R64:10},'ATP 500':{F:300,SF:180,QF:90,R16:45,R32:20},'ATP 250':{F:150,SF:90,QF:45,R16:20,R32:10},'Chal 125':{F:75,SF:45,QF:25,R16:13,R32:6}};
-var PZE={'Grand Slam':{F:1200000,SF:580000,QF:300000,R16:150000,R32:75000,R64:37000,R128:15000},'Masters 1000':{F:500000,SF:250000,QF:120000,R16:55000,R32:26000,R64:12000},'ATP 500':{F:200000,SF:100000,QF:45000,R16:20000,R32:9000},'ATP 250':{F:75000,SF:36000,QF:18000,R16:8000,R32:3500},'Chal 125':{F:12000,SF:6000,QF:3000,R16:1500,R32:700}};
-var S250=['R32','R16','QF','SF','F'],S500=['R32','R16','QF','SF','F'],SM=['R64','R32','R16','QF','SF','F'],SGS=['R128','R64','R32','R16','QF','SF','F'];
-
-function makeCalendar(){
-  return [
-    {wk:1,month:'January',date:'Jan 1–7',type:'choice',label:'New Year prep',options:[Tr('t1a','Training — serve placement','Fine-tune serve patterns with your coach.',{serve:2},['Serve +2']),Re('Rest week','Start the season completely fresh.')]},
+function makeCalendar(sNum){
+  var s=sNum;
+  return[
+    {wk:1,month:'January',date:'Jan 1–7',type:'choice',label:'New Year prep',options:[Tr('s'+s+'t1a','Training — serve placement','Fine-tune serve patterns with your coach.',{serve:2},['Serve +2']),Re('Rest week','Start the season completely fresh.')]},
     {wk:2,month:null,date:'Jan 8–14',type:'tournament',label:'Adelaide Challenger',tier:'Chal 125',surface:'Hard',tc:300,drawSize:32,structure:S250,options:[{id:'play',label:'Enter Adelaide Challenger (125)',desc:'Hard court season opener.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('Skip','Save energy for the Australian Open.')]},
-    {wk:3,month:null,date:'Jan 15–21',type:'choice',label:'Australian Open prep',options:[Tr('t3a','Training — net approach drills','Volley finishing and approach patterns.',{movement:1,mental:1},['Move +1','Mental +1']),Re('Rest week','Arrive at AO at full energy.')]},
-    {wk:4,month:null,date:'Jan 14 – Feb 2',type:'tournament',label:'Australian Open',tier:'Grand Slam',surface:'Hard',grandSlam:true,tc:400,drawSize:128,structure:SGS,options:[{id:'play',label:'Enter Australian Open (Grand Slam)',desc:'First Slam. Best of 5 on hard courts.',pills:['2000 pts max','Best of 5',nrgRangePill('Grand Slam',SGS)],energyType:'match',skillGains:{}},Tr('t4b','Skip — train through AO','Focus on conditioning.',{fitness:3,backhand:1},['Fitness +3','BH +1'])]},
-    {wk:5,month:'February',date:'Feb 3–9',type:'choice',label:'Recovery week',options:[Re('Rest week — AO recovery','Recover fully before Rotterdam.'),Tr('t5b','Training — BH under pressure','Work on the backhand.',{backhand:2,fitness:1},['BH +2','Fitness +1'])]},
+    {wk:3,month:null,date:'Jan 15–21',type:'choice',label:'AO prep',options:[Tr('s'+s+'t3a','Training — net approach drills','Volleys and approach patterns.',{movement:1,mental:1},['Move +1','Mental +1']),Re('Rest week','Arrive at AO at full energy.')]},
+    {wk:4,month:null,date:'Jan 14 – Feb 2',type:'tournament',label:'Australian Open',tier:'Grand Slam',surface:'Hard',grandSlam:true,tc:400,drawSize:128,structure:SGS,options:[{id:'play',label:'Enter Australian Open (Grand Slam)',desc:'First Slam of the year. Best of 5.',pills:['2000 pts max','Best of 5',nrgRangePill('Grand Slam',SGS)],energyType:'match',skillGains:{}},Tr('s'+s+'t4b','Skip — train through AO','Focus on conditioning.',{fitness:3,backhand:1},['Fitness +3','BH +1'])]},
+    {wk:5,month:'February',date:'Feb 3–9',type:'choice',label:'Recovery week',options:[Re('Rest week — AO recovery','Recover fully before Rotterdam.'),Tr('s'+s+'t5b','Training — BH under pressure','Work on the backhand.',{backhand:2,fitness:1},['BH +2','Fitness +1'])]},
     {wk:6,month:null,date:'Feb 10–16',type:'tournament',label:'Rotterdam Open',tier:'ATP 500',surface:'Hard (indoor)',tc:900,drawSize:32,structure:S500,options:[{id:'play',label:'Enter Rotterdam Open (ATP 500)',desc:'Indoor hard. 500 pts available.',pills:['500 pts max',nrgRangePill('ATP 500',S500)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Marseille Challenger',desc:'Title shot on indoor hard.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('Skip','Rest before clay season.')]},
-    {wk:7,month:'March',date:'Mar 3–9',type:'choice',label:'Clay transition',options:[Tr('t7a','Training — clay movement','Slide footwork and topspin depth.',{movement:2,backhand:1},['Move +2','BH +1']),Re('Rest week','Come into Monte-Carlo fresh.')]},
-    {wk:8,month:null,date:'Mar 10–23',type:'tournament',label:'Monte-Carlo Masters',tier:'Masters 1000',surface:'Clay',tc:1200,drawSize:96,structure:SM,options:[{id:'play',label:'Enter Monte-Carlo Masters 1000',desc:'First clay Masters. 1000 pts.',pills:['1000 pts max',nrgRangePill('Masters 1000',SM)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Marbella Challenger',desc:'Smaller clay field.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('Skip — save energy','Skip clay if it\'s not your surface.')]},
-    {wk:9,month:'April',date:'Apr 7–13',type:'choice',label:'Free week',options:[Tr('t9a','Training — fitness block','Push conditioning hard.',{fitness:3},['Fitness +3']),Tr('t9b','Training — backhand DTL','Target the backhand liability.',{backhand:2,mental:1},['BH +2','Mental +1'])]},
+    {wk:7,month:'March',date:'Mar 3–9',type:'choice',label:'Clay transition',options:[Tr('s'+s+'t7a','Training — clay movement','Slide footwork and topspin depth.',{movement:2,backhand:1},['Move +2','BH +1']),Re('Rest week','Come into Monte-Carlo fresh.')]},
+    {wk:8,month:null,date:'Mar 10–23',type:'tournament',label:'Monte-Carlo Masters',tier:'Masters 1000',surface:'Clay',tc:1200,drawSize:96,structure:SM,options:[{id:'play',label:'Enter Monte-Carlo Masters 1000',desc:'Clay Masters. 1000 pts.',pills:['1000 pts max',nrgRangePill('Masters 1000',SM)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Marbella Challenger',desc:'Smaller clay field.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('Skip','Skip clay if not your surface.')]},
+    {wk:9,month:'April',date:'Apr 7–13',type:'choice',label:'Free week',options:[Tr('s'+s+'t9a','Training — fitness block','Push conditioning hard.',{fitness:3},['Fitness +3']),Tr('s'+s+'t9b','Training — backhand DTL','Target the backhand.',{backhand:2,mental:1},['BH +2','Mental +1'])]},
     {wk:10,month:null,date:'Apr 14–27',type:'tournament',label:'Rome Masters',tier:'Masters 1000',surface:'Clay',tc:1000,drawSize:96,structure:SM,options:[{id:'play',label:'Enter Rome Masters 1000',desc:'Italian Open. 1000 pts.',pills:['1000 pts max',nrgRangePill('Masters 1000',SM)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Lyon Challenger',desc:'Weaker clay field.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('Skip','Save everything for Roland Garros.')]},
-    {wk:11,month:'May',date:'May 5–11',type:'choice',label:'Roland Garros prep',options:[Tr('t11a','Training — clay serve tactics','Wide serve to open the court.',{serve:1,mental:1},['Serve +1','Mental +1']),Re('Rest week','Arrive at Roland Garros at peak energy.')]},
-    {wk:12,month:null,date:'May 25 – Jun 8',type:'tournament',label:'Roland Garros',tier:'Grand Slam',surface:'Clay',grandSlam:true,tc:600,drawSize:128,structure:SGS,options:[{id:'play',label:'Enter Roland Garros (Grand Slam)',desc:'Best of 5 on clay.',pills:['2000 pts max','Best of 5 on clay',nrgRangePill('Grand Slam',SGS)],energyType:'match',skillGains:{}},Re('Skip — grass prep','Head straight to Wimbledon mode.',{serve:1})]},
-    {wk:13,month:'June',date:'Jun 9–15',type:'choice',label:'Grass transition',options:[Tr('t13a','Training — grass serve and volley','Net approach and volley finishing.',{serve:1,movement:1},['Serve +1','Move +1']),Re('Rest week','Arrive at Wimbledon at 100%.')]},
+    {wk:11,month:'May',date:'May 5–11',type:'choice',label:'Roland Garros prep',options:[Tr('s'+s+'t11a','Training — clay serve tactics','Wide serve to open the court.',{serve:1,mental:1},['Serve +1','Mental +1']),Re('Rest week','Arrive at Roland Garros at peak energy.')]},
+    {wk:12,month:null,date:'May 25 – Jun 8',type:'tournament',label:'Roland Garros',tier:'Grand Slam',surface:'Clay',grandSlam:true,tc:600,drawSize:128,structure:SGS,options:[{id:'play',label:'Enter Roland Garros (Grand Slam)',desc:'Best of 5 on clay.',pills:['2000 pts max','Best of 5',nrgRangePill('Grand Slam',SGS)],energyType:'match',skillGains:{}},Re('Skip — grass prep','Head to Wimbledon mode.',{serve:1})]},
+    {wk:13,month:'June',date:'Jun 9–15',type:'choice',label:'Grass transition',options:[Tr('s'+s+'t13a','Training — grass serve and volley','Net approach and volley finishing.',{serve:1,movement:1},['Serve +1','Move +1']),Re('Rest week','Arrive at Wimbledon at 100%.')]},
     {wk:14,month:null,date:'Jun 16–22',type:'tournament',label:"Queen's Club",tier:'ATP 500',surface:'Grass',tc:900,drawSize:64,structure:S500,options:[{id:'play',label:"Enter Queen's Club (ATP 500)",desc:'Wimbledon warm-up on grass.',pills:['500 pts max',nrgRangePill('ATP 500',S500)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Eastbourne Challenger',desc:'Title shot on grass.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('Skip','All in on Wimbledon.')]},
-    {wk:15,month:'July',date:'Jun 30 – Jul 6',type:'choice',label:'Wimbledon prep',options:[Tr('t15a','Training — Wimbledon serve tactics','Slice wide, charge the net.',{serve:2},['Serve +2']),Re('Rest week','Arrive at Wimbledon at 100%.')]},
-    {wk:16,month:null,date:'Jun 30 – Jul 13',type:'tournament',label:'Wimbledon',tier:'Grand Slam',surface:'Grass',grandSlam:true,tc:500,drawSize:128,structure:SGS,options:[{id:'play',label:'Enter Wimbledon (Grand Slam)',desc:'Best of 5 on grass.',pills:['2000 pts max','Best of 5 on grass',nrgRangePill('Grand Slam',SGS)],energyType:'match',skillGains:{}},Re('Skip — US Open prep','Conserve for hard courts.',{fitness:2})]},
-    {wk:17,month:'August',date:'Jul 28 – Aug 3',type:'choice',label:'Post-Wimbledon recovery',options:[Re('Rest week — full recovery','+40 energy before Cincinnati.'),Tr('t17b','Training — hard court return','Back to hard courts.',{serve:1,fitness:1},['Serve +1','Fitness +1'])]},
+    {wk:15,month:'July',date:'Jun 30 – Jul 6',type:'choice',label:'Wimbledon prep',options:[Tr('s'+s+'t15a','Training — Wimbledon serve tactics','Slice wide, charge the net.',{serve:2},['Serve +2']),Re('Rest week','Arrive at Wimbledon at 100%.')]},
+    {wk:16,month:null,date:'Jun 30 – Jul 13',type:'tournament',label:'Wimbledon',tier:'Grand Slam',surface:'Grass',grandSlam:true,tc:500,drawSize:128,structure:SGS,options:[{id:'play',label:'Enter Wimbledon (Grand Slam)',desc:'Best of 5 on grass.',pills:['2000 pts max','Best of 5',nrgRangePill('Grand Slam',SGS)],energyType:'match',skillGains:{}},Re('Skip — US Open prep','Conserve for hard courts.',{fitness:2})]},
+    {wk:17,month:'August',date:'Jul 28 – Aug 3',type:'choice',label:'Post-Wimbledon recovery',options:[Re('Rest week — full recovery','+40 energy before Cincinnati.'),Tr('s'+s+'t17b','Training — hard court return','Back to hard courts.',{serve:1,fitness:1},['Serve +1','Fitness +1'])]},
     {wk:18,month:null,date:'Aug 11–24',type:'tournament',label:'Cincinnati Masters',tier:'Masters 1000',surface:'Hard',tc:1000,drawSize:64,structure:SM,options:[{id:'play',label:'Enter Cincinnati Masters 1000',desc:'US Open warm-up. 1000 pts.',pills:['1000 pts max',nrgRangePill('Masters 1000',SM)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Winston-Salem Open',desc:'ATP 250 title shot.',pills:['250 pts max',nrgRangePill('ATP 250',S250)],energyType:'match',skillGains:{}},Re('Skip','Save energy for the US Open.')]},
     {wk:19,month:'September',date:'Aug 25 – Sep 7',type:'tournament',label:'US Open',tier:'Grand Slam',surface:'Hard',grandSlam:true,tc:500,drawSize:128,structure:SGS,options:[{id:'play',label:'Enter US Open (Grand Slam)',desc:'Hard court Slam. Best of 5.',pills:['2000 pts max','Best of 5',nrgRangePill('Grand Slam',SGS)],energyType:'match',skillGains:{}},Re('Skip','Long season. Protect fitness.')]},
-    {wk:20,month:'October',date:'Sep 22–28',type:'choice',label:'Post-US Open recovery',options:[Re('Rest week — full recovery','+40 energy for the autumn swing.'),Tr('t20b','Training — season review','Address weaknesses.',{fitness:2,backhand:1},['Fitness +2','BH +1'])]},
+    {wk:20,month:'October',date:'Sep 22–28',type:'choice',label:'Post-US Open recovery',options:[Re('Rest week — full recovery','+40 energy for the autumn.'),Tr('s'+s+'t20b','Training — season review','Address weaknesses.',{fitness:2,backhand:1},['Fitness +2','BH +1'])]},
     {wk:21,month:null,date:'Oct 6–12',type:'tournament',label:'Shanghai Masters',tier:'Masters 1000',surface:'Hard',tc:1400,drawSize:96,structure:SM,options:[{id:'play',label:'Enter Shanghai Masters 1000',desc:'Asia swing. Hard courts.',pills:['1000 pts max',nrgRangePill('Masters 1000',SM)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Zhuhai Challenger',desc:'Title shot — smaller field.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('Skip','European indoors suits you better.')]},
-    {wk:22,month:'November',date:'Oct 27 – Nov 2',type:'choice',label:'Paris Masters prep',options:[Tr('t22a','Training — indoor serve','Refine service patterns for fast Paris surface.',{serve:1,mental:1},['Serve +1','Mental +1']),Re('Rest week','Come into Paris sharp.')]},
-    {wk:23,month:null,date:'Nov 3–9',type:'tournament',label:'Paris Masters',tier:'Masters 1000',surface:'Hard (indoor)',tc:900,drawSize:64,structure:SM,options:[{id:'play',label:'Enter Paris Masters 1000',desc:'Year-end indoor Masters.',pills:['1000 pts max',nrgRangePill('Masters 1000',SM)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Metz Challenger',desc:'Title shot on indoor hard.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('End season here','Earn it next year.')]},
-    {wk:24,month:null,date:'Nov 10',type:'choice',label:'Season end',isLast:true,options:[Re('End Season 1','The season is complete.')]}
+    {wk:22,month:'November',date:'Oct 27 – Nov 2',type:'choice',label:'Paris Masters prep',options:[Tr('s'+s+'t22a','Training — indoor serve','Refine service patterns for Paris.',{serve:1,mental:1},['Serve +1','Mental +1']),Re('Rest week','Come into Paris sharp.')]},
+    {wk:23,month:null,date:'Nov 3–9',type:'tournament',label:'Paris Masters',tier:'Masters 1000',surface:'Hard (indoor)',tc:900,drawSize:64,structure:SM,options:[{id:'play',label:'Enter Paris Masters 1000',desc:'Year-end indoor Masters.',pills:['1000 pts max',nrgRangePill('Masters 1000',SM)],energyType:'match',skillGains:{}},{id:'chal',label:'Enter Metz Challenger',desc:'Title shot on indoor hard.',pills:['125 pts max',nrgRangePill('Chal 125',S250)],energyType:'match',skillGains:{}},Re('End season here','Enjoy the offseason.')]},
+    {wk:24,month:null,date:'Nov 10',type:'choice',label:'Season end',isLast:true,options:[Re('End Season','Head into the offseason.')]}
   ];
 }
 
+/* ══════════════════════════════════════════
+   SEASON LOOP STATE
+══════════════════════════════════════════ */
 var WKS=[],wi=0,sOpt=null,wkD=null,ms={ri:0,pts:0,pr:0,nr:0,w:0,l:0},activeRounds=[];
+var seasonNum=1;
 
 function startSeason(){
   var ad=AD[C.age]||AD[18];
   var coach=COACHES.find(function(c){return c.key===C.ck;})||COACHES[0];
   P={name:C.name,nation:C.nation,style:C.style,goal:C.goal,goalLbl:C.goalLbl,
-    rank:ad.rank,cPts:0,pts:0,wins:0,losses:0,finals:0,titles:0,slamTitles:0,
-    funds:ad.funds,energy:90,coachCost:C.cc,coachName:coach.name,
+    startAge:C.age,age:C.age,rank:ad.rank,cPts:0,pts:0,wins:0,losses:0,
+    finals:0,titles:0,slamTitles:0,funds:ad.funds,energy:90,
+    coachCost:C.cc,coachKey:C.ck,coachName:coach.name,
     attrs:Object.assign({},C.attrs),history:[]};
-  WKS=makeCalendar();wi=0;sOpt=null;
-  var init=C.name.split(' ').map(function(w){return w[0]||'';}).join('').toUpperCase().slice(0,2)||'??';
+  CAREER={seasons:[],totalWins:0,totalLosses:0,totalTitles:0,totalSlams:0,bestRank:ad.rank,careerPts:0};
+  seasonNum=1;
+  initDashboard();
+  beginNewSeason();
+}
+
+function initDashboard(){
+  var init=P.name.split(' ').map(function(w){return w[0]||'';}).join('').toUpperCase().slice(0,2)||'??';
   document.getElementById('av').textContent=init;
-  document.getElementById('dash-name').textContent=C.name;
-  document.getElementById('dash-sub').textContent='Age '+C.age+' · '+C.nation+' · '+SL[C.style]+' · '+coach.name;
-  document.getElementById('d-goal').textContent=C.goalLbl;
-  document.getElementById('rv-sub').textContent=C.name+' · '+C.nation;
+  document.getElementById('dash-name').textContent=P.name;
+  document.getElementById('d-goal').textContent=P.goalLbl;
+  document.getElementById('cr-sub').textContent=P.name+' · '+P.nation;
+}
+
+function beginNewSeason(){
+  WKS=makeCalendar(seasonNum);wi=0;sOpt=null;
+  P.pts=0;P.wins=0;P.losses=0;P.finals=0;P.titles=0;P.slamTitles=0;P.energy=90;
+  document.getElementById('dash-sub').textContent='Age '+P.age+' · S'+seasonNum+' · '+P.coachName;
+  document.getElementById('d-snum').textContent=seasonNum;
   rdash();goScr('sc-dash');
 }
 
-/* ── DASHBOARD ── */
+/* ══════════════════════════════════════════
+   OFFSEASON
+══════════════════════════════════════════ */
+var offBspt={};
+var offPool=10;
+var offCoachKey='';
+
+function showOffseason(){
+  var o=ovr();
+  var age=P.age;
+  var canRetire=age>=28;
+  var forcedRetire=o<50;
+  var maxSeasons=38-P.startAge;
+  var reachedMax=seasonNum>=maxSeasons;
+
+  document.getElementById('off-title').textContent='Season '+seasonNum+' complete';
+  document.getElementById('off-sub').textContent=P.name+' · Age '+age;
+  document.getElementById('off-badge').textContent='Age '+age;
+  document.getElementById('off-snum').textContent=seasonNum;
+  document.getElementById('off-next-snum').textContent=seasonNum+1;
+
+  /* season summary */
+  var wp=P.wins+P.losses>0?Math.round(P.wins/(P.wins+P.losses)*100):0;
+  document.getElementById('off-season-stats').innerHTML=
+    '<div class="sr"><span style="color:var(--ts)">Record</span><span style="font-weight:500;color:var(--tp)">'+P.wins+'W–'+P.losses+'L ('+wp+'%)</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Ranking pts</span><span style="color:var(--g);font-weight:500">'+P.pts+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Year-end rank</span><span style="color:var(--g);font-weight:500">#'+P.rank+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Titles</span><span style="font-weight:500;color:'+(P.titles>0?'var(--g)':'var(--tt)')+'">'+P.titles+(P.slamTitles>0?' ('+P.slamTitles+' Slam)':'')+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Balance</span><span style="color:var(--g);font-weight:500">'+ff(P.funds)+'</span></div>';
+
+  /* age decay */
+  offPool=10;offBspt={};Object.keys(AN).forEach(function(k){offBspt[k]=0;});
+  var decay=getDecay(age);
+  var decayKeys=Object.keys(decay).filter(function(k){return decay[k]>0;});
+  var decayNote='';
+  if(decayKeys.length>0){
+    var applied=[];
+    decayKeys.forEach(function(k){
+      var amt=Math.round(decay[k]);
+      if(amt>0){P.attrs[k]=Math.max(30,P.attrs[k]-amt);applied.push('−'+amt+' '+AN[k]);}
+    });
+    if(applied.length>0)decayNote='Age '+age+' decay applied: '+applied.join(', ')+'. Spend your 10 pts to offset or invest elsewhere.';
+  } else {
+    decayNote='No decay at age '+age+'. Invest your 10 pts freely.';
+  }
+  document.getElementById('off-decay-note').textContent=decayNote;
+  renderOffAlloc();
+
+  /* coach options */
+  var currentCoach=COACHES.find(function(c){return c.key===P.coachKey;})||COACHES[0];
+  offCoachKey=P.coachKey;
+  document.getElementById('off-copts').innerHTML=
+    '<div style="font-size:11px;color:var(--ts);margin-bottom:8px">Current: '+P.coachName+' ($'+P.coachCost.toLocaleString()+'/mo). Switch any time.</div>'
+    +COACHES.map(function(c){return '<div class="opt" id="offco-'+c.key+'" onclick="pickOffCoach(\''+c.key+'\','+c.cost+')" style="margin-bottom:6px">'+'<div class="ico" style="background:var(--bsu)"><span style="font-size:11px;font-weight:500;color:var(--g)">'+c.name.split(' ')[0][0]+c.name.split(' ')[1][0]+'</span></div>'+'<div style="flex:1;min-width:0"><div class="ot">'+c.name+(c.key===P.coachKey?' · current':'')+'</div>'+'<div style="font-size:11px;color:var(--tw);font-weight:500;margin-bottom:2px">$'+c.cost.toLocaleString()+'/mo</div>'+'<div>'+c.pills.map(function(p){return '<span class="pill pn">'+p+'</span> ';}).join('')+'</div></div></div>';}).join('');
+  COACHES.forEach(function(c){document.getElementById('offco-'+c.key).className='opt'+(c.key===P.coachKey?' sel':'');});
+
+  /* retire */
+  var retireBox=document.getElementById('off-retire-box');
+  var continueBtn=document.getElementById('off-continue-btn');
+  if(forcedRetire){
+    retireBox.style.display='block';
+    document.getElementById('off-retire-msg').textContent='Your overall rating has fallen below 50. Your body is telling you it\'s time. Your career is over.';
+    continueBtn.style.display='none';
+    retireBox.querySelector('.btn-r').textContent='See career summary';
+    document.getElementById('off-warning').style.display='block';
+    document.getElementById('off-warning').textContent='Overall rating dropped to '+o+'. Forced retirement.';
+  } else if(reachedMax){
+    retireBox.style.display='block';
+    document.getElementById('off-retire-msg').textContent='You\'ve played '+(seasonNum)+' seasons. This is the end of the road — a remarkable career.';
+    continueBtn.style.display='none';
+    retireBox.querySelector('.btn-r').textContent='See career summary';
+    document.getElementById('off-warning').style.display='none';
+  } else if(canRetire){
+    retireBox.style.display='block';
+    document.getElementById('off-retire-msg').textContent='You are '+age+'. You can retire now with dignity — or chase one more title.';
+    continueBtn.style.display='block';
+    retireBox.querySelector('.btn-r').textContent='Retire now — see career summary';
+    document.getElementById('off-warning').style.display='none';
+  } else {
+    retireBox.style.display='none';
+    continueBtn.style.display='block';
+    document.getElementById('off-warning').style.display='none';
+  }
+
+  goScr('sc-offseason');
+}
+
+function renderOffAlloc(){
+  var left=offPool-Object.values(offBspt).reduce(function(a,b){return a+b;},0);
+  document.getElementById('off-pool').textContent=left;
+  document.getElementById('off-arows').innerHTML=Object.keys(AN).map(function(k){
+    var cur=Math.round(P.attrs[k]),bs=offBspt[k]||0,tot=cur+bs;
+    return '<div class="ar"><span class="an">'+AN[k]+'</span>'
+      +'<button class="adj" onclick="adjOff(\''+k+'\',-1)" '+(bs<=0?'disabled':'')+'>−</button>'
+      +'<span class="av">'+tot+'</span>'
+      +'<div class="abw"><div class="ab1" style="width:'+cur+'%;background:'+AC[k]+'"></div>'+(bs>0?'<div class="ab3" style="left:'+cur+'%;width:'+bs+'%"></div>':'')+'</div>'
+      +'<span class="atg">'+(bs>0?'+'+bs:'')+'</span>'
+      +'<button class="adj" onclick="adjOff(\''+k+'\',1)" '+((left-(offBspt[k]||0)<=0&&(offBspt[k]||0)===0)||left<=0?'disabled':'')+'>+</button></div>';
+  }).join('');
+}
+function adjOff(k,d){
+  var bs=offBspt[k]||0,left=offPool-Object.values(offBspt).reduce(function(a,b){return a+b;},0);
+  if(d>0&&left<=0)return;if(d<0&&bs<=0)return;
+  offBspt[k]=bs+d;renderOffAlloc();
+}
+function pickOffCoach(k,cost){
+  offCoachKey=k;
+  COACHES.forEach(function(c){document.getElementById('offco-'+c.key).className='opt'+(c.key===k?' sel':'');});
+}
+function beginNextSeason(){
+  /* apply offseason bonus pts */
+  Object.keys(offBspt).forEach(function(k){P.attrs[k]=Math.min(99,P.attrs[k]+(offBspt[k]||0));});
+  /* apply coach change */
+  var nc=COACHES.find(function(c){return c.key===offCoachKey;})||COACHES[0];
+  P.coachKey=offCoachKey;P.coachCost=nc.cost;P.coachName=nc.name;
+  /* age up */
+  P.age++;seasonNum++;
+  beginNewSeason();
+}
+function retirePlayer(){
+  /* apply offseason bonus pts before retiring */
+  Object.keys(offBspt).forEach(function(k){P.attrs[k]=Math.min(99,P.attrs[k]+(offBspt[k]||0));});
+  showCareerSummary();
+}
+
+/* ══════════════════════════════════════════
+   DASHBOARD
+══════════════════════════════════════════ */
 function rdash(){
   var w=WKS[wi];
   var dp=w.date.split('–')[0].trim().split(' ');
-  document.getElementById('dash-badge').textContent='S1·'+dp.slice(0,2).join(' ');
+  document.getElementById('dash-badge').textContent='S'+seasonNum+' · '+dp.slice(0,2).join(' ');
   document.getElementById('d-rank').textContent='#'+P.rank;
   document.getElementById('d-wl').textContent=P.wins+'–'+P.losses;
   document.getElementById('d-pts').textContent=P.pts;
@@ -544,32 +669,109 @@ function rdash(){
   if(w.tip){tb.style.display='block';tb.textContent=P.coachName+': '+w.tip;}else tb.style.display='none';
   rCal();rOpts(w);rAttrs();rHist();sOpt=null;document.getElementById('go-btn').disabled=true;rEP();
 }
-function cCol(w,past,now){if(past)return{bg:'var(--bg-secondary)',tc:'var(--text-tertiary)',b:'var(--border-light)'};if(now)return{bg:'var(--bg-info)',tc:'var(--text-info)',b:'var(--border-info)',cur:true};if(w.grandSlam)return{bg:'var(--bg-success)',tc:'var(--text-success)',b:'var(--border-success)'};if(w.tier)return{bg:'var(--bg-warning)',tc:'var(--text-warning)',b:'var(--border-warning)'};return{bg:'var(--bg-secondary)',tc:'var(--text-tertiary)',b:'var(--border-light)'};}
-function rCal(){var idxs=[];if(wi>0)idxs.push(wi-1);idxs.push(wi);for(var i=wi+1;i<=wi+4&&i<WKS.length;i++)idxs.push(i);var h='',lm=null;idxs.forEach(function(i){var w=WKS[i],past=i<wi,now=i===wi;if(!past&&w.month&&w.month!==lm){h+='<div class="cal-month">'+w.month+'</div>';lm=w.month;}else if(past&&w.month)lm=w.month;var c=cCol(w,past,now);var hist=past?P.history.find(function(hh){return hh.wk===w.wk;}):null;var res=hist&&hist.result?' · '+hist.result:'';h+='<div class="cal-row" style="opacity:'+(past?'.5':'1')+'"><div class="cal-wk">'+w.wk+'</div><div class="cal-blk" style="background:'+c.bg+';'+(c.cur?'border:2px solid '+c.b:'border:0.5px solid '+c.b)+'"><div class="cb-n" style="color:'+c.tc+'">'+(past?'✓ ':'')+(now?'▶ ':'')+w.label+res+'</div><div class="cb-s" style="color:'+c.tc+'">'+(w.tier||'Free week')+(w.surface?' · '+w.surface:'')+'</div><div class="cb-date" style="color:'+c.tc+'">'+w.date+'</div></div></div>';});document.getElementById('cal-display').innerHTML=h;}
-function rOpts(w){document.getElementById('opts-label').textContent=w.date+' · '+(w.grandSlam?w.label+' (Grand Slam)':w.label);document.getElementById('week-options').innerHTML=(w.options||[]).map(function(o){return '<div class="wopt" id="wo-'+o.id+'" onclick="pOpt(\''+o.id+'\')">'+'<div class="wo-t">'+o.label+'</div><div class="wo-s">'+o.desc+'</div>'+'<div style="display:flex;gap:5px;flex-wrap:wrap">'+o.pills.map(function(p){return '<span class="pill p-n">'+p+'</span>';}).join('')+'</div></div>';}).join('');}
+function cCol(w,past,now){if(past)return{bg:'var(--bs)',tc:'var(--tt)',b:'var(--bl)'};if(now)return{bg:'var(--bi)',tc:'var(--ti)',b:'var(--bi2)',cur:true};if(w.grandSlam)return{bg:'var(--bsu)',tc:'var(--tsu)',b:'var(--bsu2)'};if(w.tier)return{bg:'var(--bw)',tc:'var(--tw)',b:'var(--bw2)'};return{bg:'var(--bs)',tc:'var(--tt)',b:'var(--bl)'};}
+function rCal(){var idxs=[];if(wi>0)idxs.push(wi-1);idxs.push(wi);for(var i=wi+1;i<=wi+4&&i<WKS.length;i++)idxs.push(i);var h='',lm=null;idxs.forEach(function(i){var w=WKS[i],past=i<wi,now=i===wi;if(!past&&w.month&&w.month!==lm){h+='<div class="cal-month">'+w.month+'</div>';lm=w.month;}else if(past&&w.month)lm=w.month;var c=cCol(w,past,now);var hist=past?P.history.find(function(hh){return hh.wk===w.wk;}):null;var res=hist&&hist.result?' · '+hist.result:'';h+='<div class="cal-row" style="opacity:'+(past?'.5':'1')+'"><div class="cal-wk">'+w.wk+'</div><div class="cal-blk" style="background:'+c.bg+';'+(c.cur?'border:2px solid '+c.b:'border:0.5px solid '+c.b)+'"><div class="cb-n" style="color:'+c.tc+'">'+(past?'✓ ':'')+(now?'▶ ':'')+w.label+res+'</div><div class="cb-s" style="color:'+c.tc+'">'+(w.tier||'Free week')+(w.surface?' · '+w.surface:'')+'</div><div class="cb-d" style="color:'+c.tc+'">'+w.date+'</div></div></div>';});document.getElementById('cal-display').innerHTML=h;}
+function rOpts(w){document.getElementById('opts-label').textContent=w.date+' · '+(w.grandSlam?w.label+' (Grand Slam)':w.label);document.getElementById('week-options').innerHTML=(w.options||[]).map(function(o){return '<div class="wopt" id="wo-'+o.id+'" onclick="pOpt(\''+o.id+'\')">'+'<div class="wo-t">'+o.label+'</div><div class="wo-s">'+o.desc+'</div>'+'<div style="display:flex;gap:5px;flex-wrap:wrap">'+o.pills.map(function(p){return '<span class="pill pn">'+p+'</span>';}).join('')+'</div></div>';}).join('');}
 function pOpt(id){sOpt=id;(WKS[wi].options||[]).forEach(function(o){var el=document.getElementById('wo-'+o.id);if(el)el.className='wopt'+(o.id===id?' on':'');});rEP();document.getElementById('go-btn').disabled=false;}
 function rEP(){var w=WKS[wi],opt=sOpt?(w.options||[]).find(function(o){return o.id===sOpt;}):null;var cur=P.energy,c1=ec(cur);document.getElementById('ep-cur').style.cssText='height:6px;border-radius:3px;background:'+c1+';width:'+cur+'%;transition:width .4s';document.getElementById('ep-cur-v').textContent=cur+'/100';document.getElementById('ep-cur-v').style.color=c1;if(!opt||opt.energyType==='fixed'){var d=opt?opt.energyVal:0,aft=opt?Math.min(100,Math.max(0,cur+d)):cur,c2=ec(aft);document.getElementById('ep-b').style.cssText='height:6px;border-radius:3px;background:'+c2+';width:'+aft+'%;transition:width .4s';document.getElementById('ep-b-v').textContent=aft+'/100';document.getElementById('ep-b-v').style.color=c2;document.getElementById('ep-c').style.cssText='height:6px;border-radius:3px;background:transparent;width:0%';document.getElementById('ep-c-v').textContent='';document.getElementById('ep-b-lbl').textContent='After week';document.getElementById('ep-c-lbl').textContent='';document.getElementById('ep-note').textContent=opt&&d>0?'Fixed energy gain.':'Select an option.';}else{var rng=nrgRange(w.tier,w.structure||S250);var aftMin=Math.max(0,cur-rng.min),aftMax=Math.max(0,cur-rng.max);var c2=ec(aftMin),c3=ec(aftMax);document.getElementById('ep-b').style.cssText='height:6px;border-radius:3px;background:'+c2+';width:'+aftMin+'%;transition:width .4s';document.getElementById('ep-b-v').textContent=aftMin+'/100';document.getElementById('ep-b-v').style.color=c2;document.getElementById('ep-c').style.cssText='height:6px;border-radius:3px;background:'+c3+';width:'+aftMax+'%;transition:width .4s';document.getElementById('ep-c-v').textContent=aftMax+'/100';document.getElementById('ep-c-v').style.color=c3;document.getElementById('ep-b-lbl').textContent='If R1 exit';document.getElementById('ep-c-lbl').textContent='If deep run';document.getElementById('ep-note').textContent='Each match costs '+(w.tier==='Grand Slam'?'5–9':'4–7')+' energy.';}}
-function rAttrs(){document.getElementById('attr-display').innerHTML=Object.keys(AN).map(function(k){var v=Math.round(P.attrs[k]);return '<div class="at-row"><div class="at-top2"><span style="font-size:11px;color:var(--text-primary)">'+AN[k]+'</span><span style="font-size:11px;font-weight:500">'+v+'</span></div><div style="background:var(--bg-secondary);border-radius:3px;height:5px"><div style="width:'+v+'%;height:5px;border-radius:3px;background:'+AC[k]+'"></div></div></div>';}).join('');}
-function rHist(){if(!P.history.length){document.getElementById('history-card').style.display='none';return;}document.getElementById('history-card').style.display='block';document.getElementById('history-list').innerHTML=P.history.slice(-4).map(function(h){return '<div class="h-row"><div class="h-dot" style="background:'+(h.pts>0?'var(--green)':'var(--border-light)')+'"></div><div style="flex:1;color:var(--text-primary)">Wk '+h.wk+' · '+h.label+'</div><div style="color:var(--text-tertiary)">'+h.result+'</div>'+(h.pts?'<div style="color:var(--green);font-weight:500;margin-left:8px">+'+h.pts+'</div>':'')+'</div>';}).join('');}
+function rAttrs(){document.getElementById('attr-display').innerHTML=Object.keys(AN).map(function(k){var v=Math.round(P.attrs[k]);return '<div class="at-row"><div class="at-top2"><span style="font-size:11px;color:var(--tp)">'+AN[k]+'</span><span style="font-size:11px;font-weight:500">'+v+'</span></div><div style="background:var(--bs);border-radius:3px;height:5px"><div style="width:'+v+'%;height:5px;border-radius:3px;background:'+AC[k]+'"></div></div></div>';}).join('');}
+function rHist(){if(!P.history.length){document.getElementById('history-card').style.display='none';return;}document.getElementById('history-card').style.display='block';document.getElementById('history-list').innerHTML=P.history.slice(-4).map(function(h){return '<div class="h-row"><div class="h-dot" style="background:'+(h.pts>0?'var(--g)':'var(--bl)')+'"></div><div style="flex:1;color:var(--tp)">Wk '+h.wk+' · '+h.label+'</div><div style="color:var(--tt)">'+h.result+'</div>'+(h.pts?'<div style="color:var(--g);font-weight:500;margin-left:8px">+'+h.pts+'</div>':'')+'</div>';}).join('');}
 function goWeek(){var w=WKS[wi],opt=(w.options||[]).find(function(o){return o.id===sOpt;});if(!opt)return;if(opt.energyType==='match'){wkD=w;ms={ri:0,pts:0,pr:0,nr:0,w:0,l:0};activeRounds=buildDraw(w);document.getElementById('m-title').textContent=w.label;document.getElementById('m-sub').textContent=(w.tier||'Tournament')+' · '+(w.surface||'Hard')+' · '+w.date+(w.grandSlam?' · Best of 5':' · Best of 3');document.getElementById('m-badge').textContent=w.surface||'Hard';document.getElementById('match-feed').innerHTML='';document.getElementById('match-footer').style.display='none';document.getElementById('match-footer').innerHTML='';bDraw();setFooter();goScr('sc-match');}else{P.energy=Math.min(100,Math.max(0,P.energy+opt.energyVal));if(opt.skillGains)Object.keys(opt.skillGains).forEach(function(k){if(P.attrs[k]!==undefined)P.attrs[k]=Math.min(99,P.attrs[k]+(opt.skillGains[k]||0));});P.funds-=P.coachCost;P.history.push({wk:w.wk,label:opt.id==='rest'?'Rest':'Training',result:opt.energyVal>0?'+'+opt.energyVal+' nrg':'Skills ↑',pts:0});adv();}}
-function adv(){wi++;var w=WKS[wi];if(!w||w.isLast){bRev();goScr('sc-review');return;}rdash();goScr('sc-dash');}
+function adv(){wi++;var w=WKS[wi];if(!w||w.isLast){endSeason();return;}rdash();goScr('sc-dash');}
 
-/* ── DRAW ── */
+/* ══════════════════════════════════════════
+   END OF SEASON
+══════════════════════════════════════════ */
+function endSeason(){
+  /* update career log */
+  CAREER.totalWins+=P.wins;CAREER.totalLosses+=P.losses;
+  CAREER.totalTitles+=P.titles;CAREER.totalSlams+=P.slamTitles;
+  if(P.rank<CAREER.bestRank)CAREER.bestRank=P.rank;
+  CAREER.careerPts+=P.pts;
+  CAREER.seasons.push({num:seasonNum,age:P.age,rank:P.rank,wins:P.wins,losses:P.losses,pts:P.pts,titles:P.titles,slams:P.slamTitles,funds:P.funds});
+  showOffseason();
+}
+
+/* ══════════════════════════════════════════
+   DRAW & MATCH
+══════════════════════════════════════════ */
+var NAMES_HARD=['B. Salas','M. Delgado','H. Johansson','C. Moreau','T. Hirano','B. Kamau','J. Okonkwo','F. Nkosi','T. Reyes','W. Li','G. Osei','A. Solis','D. Lindqvist','S. Okonkwo','R. Dupont','K. Nakamura','B. Chen','R. Bauer','R. Lopes','K. Ramos','M. Müller','P. Rashid','C. Martin'];
+var NAMES_CLAY=['P. Albanese','G. Marchetti','C. Bravo','O. Dubois','W. Khoury','T. Souza','J. Costa','T. Santos','P. Alves','M. Vargas','L. Castellano','E. Ferri','A. Reyes'];
+var NAMES_GRASS=['T. Eriksson','B. Koch','S. Lund','L. Beck','R. Dupont','P. Rashid','N. Johansson','M. Müller','G. Fraser','C. Henley'];
+var STYLES_LIST=['Baseliner','All-court','Serve-and-volley','Counter-puncher','Clay specialist'];
+var SCOUT={'Baseliner':['Heavy topspin to BH','Patient — attack short ball','Weak on fast low balls'],'All-court':['No obvious weakness','Strong returner','Watch early-ball DTL'],'Serve-and-volley':['Big serve — get return in','Pass low cross-court','Attack second serve'],'Counter-puncher':['Retrieves everything','Waits for errors','Shorten points with serve'],'Clay specialist':['Elite on clay — patience','Loops to BH all day','Inside-out FH is key']};
+var PTS={'Grand Slam':{F:1200,SF:720,QF:360,R16:180,R32:90,R64:45,R128:10},'Masters 1000':{F:600,SF:360,QF:180,R16:90,R32:45,R64:10},'ATP 500':{F:300,SF:180,QF:90,R16:45,R32:20},'ATP 250':{F:150,SF:90,QF:45,R16:20,R32:10},'Chal 125':{F:75,SF:45,QF:25,R16:13,R32:6}};
+var PZE={'Grand Slam':{F:1200000,SF:580000,QF:300000,R16:150000,R32:75000,R64:37000,R128:15000},'Masters 1000':{F:500000,SF:250000,QF:120000,R16:55000,R32:26000,R64:12000},'ATP 500':{F:200000,SF:100000,QF:45000,R16:20000,R32:9000},'ATP 250':{F:75000,SF:36000,QF:18000,R16:8000,R32:3500},'Chal 125':{F:12000,SF:6000,QF:3000,R16:1500,R32:700}};
+var used=[];
+function pickName(pool){var avail=pool.filter(function(n){return used.indexOf(n)<0;});if(!avail.length){used=[];avail=pool;}var n=avail[Math.floor(Math.random()*avail.length)];used.push(n);return n;}
 function buildDraw(wk){var tier=wk.tier,surface=(wk.surface||'Hard').split(' ')[0],isBo5=!!wk.grandSlam,ds=wk.drawSize||64;var pSeed=calcSeed(P.rank,ds);var pt=PTS[tier]||PTS['ATP 250'],pz=PZE[tier]||PZE['ATP 250'];var struct=wk.structure||S250;var rankRanges={R128:[190,260],R64:[130,190],R32:[80,140],R16:[50,90],QF:[20,60],SF:[10,40],F:[5,30]};var namePool=surface==='Clay'?NAMES_CLAY:surface==='Grass'?NAMES_GRASS:NAMES_HARD;used=[];return struct.map(function(rnd){var rr=rankRanges[rnd]||[50,100];var oppRank=rr[0]+Math.floor(Math.random()*(rr[1]-rr[0]));var oppName=pickName(namePool);var oppSeed=calcSeed(oppRank,ds);var sm=surfMod(wk.surface||'Hard',P.style);var sim=simMatch(P.rank,oppRank,isBo5,sm);var ptsWon=sim.win?(pt[rnd]||0):Math.round((pt[rnd]||0)*0.4);return{rnd:rnd,opp:oppName,oppRank:oppRank,oppSeed:oppSeed,win:sim.win,sets:sim.sets,nrg:nrgForRound(tier,rnd),pts:ptsWon,prize:pz[rnd]||0,pct:sim.pct,isBo5:isBo5,pSeed:pSeed,isGrandSlam:!!wk.grandSlam};});}
 function simMatch(pRank,oRank,isBo5,sm){var pOvr=ovr()+(sm||0);var oOvr;if(oRank<=10)oOvr=87;else if(oRank<=30)oOvr=82;else if(oRank<=60)oOvr=76;else if(oRank<=100)oOvr=71;else if(oRank<=150)oOvr=65;else if(oRank<=250)oOvr=59;else if(oRank<=400)oOvr=55;else oOvr=50;oOvr+=Math.round((Math.random()-0.5)*6);var gap=pOvr-oOvr;var wp=1/(1+Math.exp(-gap*0.13));wp=Math.max(0.07,Math.min(0.93,wp+(Math.random()-0.5)*0.14));var win=Math.random()<wp;var pct=Math.round(win?52+gap*0.35+Math.random()*8:48+gap*0.25-Math.random()*8);pct=Math.max(31,Math.min(69,pct));return{win:win,sets:genSets(win,isBo5,gap),pct:pct};}
 function genSets(win,isBo5,gap){var W=[[6,0],[6,1],[6,2],[6,3],[6,4],[7,5],[7,6]],L=[[0,6],[1,6],[2,6],[3,6],[4,6],[5,7],[6,7]];function ps(pw){var pool=pw?W:L,wts=[1,2,3,5,7,5,3+(Math.abs(gap)<4?4:0)];var tot=wts.reduce(function(a,b){return a+b;},0),r=Math.random()*tot,c=0;for(var i=0;i<pool.length;i++){c+=wts[i];if(r<c)return pool[i];}return pool[pool.length-1];}if(!isBo5){if(win){var r=Math.random();if(r<0.4)return[ps(1),ps(1)];if(r<0.7)return[ps(1),ps(0),ps(1)];return[ps(0),ps(1),ps(1)];}else{var r=Math.random();if(r<0.4)return[ps(0),ps(0)];if(r<0.7)return[ps(0),ps(1),ps(0)];return[ps(1),ps(0),ps(0)];}}else{if(win){var r=Math.random();if(r<0.22)return[ps(1),ps(1),ps(1)];if(r<0.52)return[ps(1),ps(0),ps(1),ps(1)];if(r<0.72)return[ps(0),ps(1),ps(1),ps(1)];if(r<0.87)return[ps(1),ps(1),ps(0),ps(0),ps(1)];return[ps(0),ps(1),ps(0),ps(1),ps(1)];}else{var r=Math.random();if(r<0.22)return[ps(0),ps(0),ps(0)];if(r<0.52)return[ps(0),ps(1),ps(0),ps(0)];if(r<0.72)return[ps(1),ps(0),ps(0),ps(0)];if(r<0.87)return[ps(0),ps(0),ps(1),ps(1),ps(0)];return[ps(1),ps(0),ps(1),ps(0),ps(0)];}}}
-
-/* ── MATCH SCREEN ── */
-function bDraw(){document.getElementById('draw-rows').innerHTML=activeRounds.map(function(r,i){var past=i<ms.ri,now=i===ms.ri;var dot=past?(r.win?'background:var(--green)':'background:var(--text-danger)'):now?'background:var(--text-info)':'background:var(--border-medium)';var sd=r.oppSeed?' ('+r.oppSeed+')':'';var opp=past?r.opp+sd+' <span style="color:var(--text-tertiary);font-size:11px">#'+r.oppRank+'</span>':'<span style="color:var(--text-tertiary)">TBD</span>';var sc=past?'<span style="font-size:11px;font-weight:500;color:'+(r.win?'var(--green)':'var(--text-danger)')+'">'+ss(r.sets)+'</span>':'';return '<div class="draw-row"><div style="width:8px;height:8px;border-radius:50%;flex-shrink:0;'+dot+'"></div><div style="font-size:11px;color:var(--text-tertiary);width:28px;flex-shrink:0">'+r.rnd+'</div><div style="flex:1;color:var(--text-primary)">'+opp+'</div>'+sc+'</div>';}).join('');}
-function setFooter(){var f=document.getElementById('match-footer');var r=activeRounds[ms.ri];if(!r){f.style.display='none';return;}var sd=r.oppSeed?' ('+r.oppSeed+')':'';var ps=r.pSeed?' · You: seed '+r.pSeed:'';f.style.display='block';f.innerHTML='<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-tertiary);margin-bottom:8px"><span>Energy: <strong style="color:'+ec(P.energy)+'">'+P.energy+'/100</strong></span><span>This match: <strong style="color:var(--text-danger)">−'+r.nrg+'</strong></span></div><button style="width:100%;padding:12px;border-radius:12px;background:var(--green);color:#fff;border:none;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit" onclick="playRound()">Play '+r.rnd+' vs '+r.opp+sd+' #'+r.oppRank+ps+'</button>';}
-function playRound(){var r=activeRounds[ms.ri];document.getElementById('match-feed').querySelectorAll('.mc-full').forEach(function(mc){var won=mc.getAttribute('data-won')==='1',lbl=mc.getAttribute('data-lbl')||'',sc=mc.getAttribute('data-score')||'';var mini=document.createElement('div');mini.className='mc-mini';mini.innerHTML='<span style="font-size:12px;font-weight:500;color:'+(won?'var(--green)':'var(--text-secondary)')+'">'+lbl+'</span><span style="font-size:12px;color:'+(won?'var(--green)':'var(--text-danger)')+'">'+sc+'</span>';mc.replaceWith(mini);});rCard(r);P.energy=Math.max(0,P.energy-r.nrg);ms.pts+=r.pts;ms.pr+=r.prize;ms.nr+=r.nrg;if(r.win)ms.w++;else ms.l++;ms.ri++;bDraw();if(r.win&&ms.ri<activeRounds.length){setFooter();document.getElementById('m-scroll').scrollTop=0;}else finT();}
-function rCard(r){var feed=document.getElementById('match-feed');var d=document.createElement('div');d.className='mc-full';var sd=r.oppSeed?' ('+r.oppSeed+')':'';var ps=r.pSeed?' · Seed '+r.pSeed:'';var lbl=r.rnd+' · '+r.opp+sd;d.setAttribute('data-won',r.win?'1':'0');d.setAttribute('data-lbl',lbl);d.setAttribute('data-score',ss(r.sets));var myW=r.sets.filter(function(s){return s[0]>s[1];}).length;var opW=r.sets.filter(function(s){return s[1]>s[0];}).length;var sb='<div class="scoreboard"><div class="sb-hdr"><div class="sb-nc">Player</div>'+r.sets.map(function(_,i){return '<div class="sb-sc">S'+(i+1)+'</div>';}).join('')+'<div class="sb-sc" style="font-weight:500">Sets</div></div><div class="sb-row '+(r.win?'wr':'')+'"><div class="sb-player '+(r.win?'w':'l')+'">'+P.name+(r.pSeed?' ('+r.pSeed+')':'')+'</div>'+r.sets.map(function(s){var w=s[0]>s[1],tb=(s[0]===7&&s[1]===6)||(s[0]===6&&s[1]===7);return '<div class="sb-game '+(w?'wg':'lg')+'">'+s[0]+(tb?'<sup style="font-size:8px">TB</sup>':'')+'</div>';}).join('')+'<div style="width:30px;text-align:center;font-size:13px;font-weight:500;color:'+(r.win?'var(--green)':'var(--text-secondary)')+'">'+myW+'</div></div><div class="vs-d">vs</div><div class="sb-row '+(!r.win?'wr':'')+'"><div class="sb-player '+(!r.win?'w':'l')+'">'+r.opp+sd+'</div>'+r.sets.map(function(s){var w=s[1]>s[0],tb=(s[0]===7&&s[1]===6)||(s[0]===6&&s[1]===7);return '<div class="sb-game '+(w?'wg':'lg')+'">'+s[1]+(tb?'<sup style="font-size:8px">TB</sup>':'')+'</div>';}).join('')+'<div style="width:30px;text-align:center;font-size:13px;font-weight:500;color:'+(!r.win?'var(--green)':'var(--text-secondary)')+'">'+opW+'</div></div></div>';var chips='<div style="display:flex;gap:5px;margin-bottom:9px"><div style="flex:1;background:var(--bg-secondary);border-radius:8px;padding:6px;text-align:center"><div style="font-size:12px;font-weight:500;color:'+(r.win?'var(--green)':'var(--text-warning)')+'">+'+r.pts+'</div><div style="font-size:9px;color:var(--text-tertiary)">pts</div></div><div style="flex:1;background:var(--bg-secondary);border-radius:8px;padding:6px;text-align:center"><div style="font-size:12px;font-weight:500;color:var(--text-warning)">'+ff(r.prize)+'</div><div style="font-size:9px;color:var(--text-tertiary)">prize</div></div><div style="flex:1;background:var(--bg-danger);border-radius:8px;padding:6px;text-align:center"><div style="font-size:12px;font-weight:500;color:var(--text-danger)">−'+r.nrg+'</div><div style="font-size:9px;color:var(--text-danger)">energy</div></div>'+(r.isBo5?'<div style="flex:1;background:var(--bg-info);border-radius:8px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:500;color:var(--text-info)">Bo5</div><div style="font-size:9px;color:var(--text-info)">Slam</div></div>':'')+'</div>';var pct=r.pct,opc=100-pct,col=pct>=50?'var(--green)':'var(--text-danger)';var stat='<div style="display:flex;align-items:center;gap:7px;margin-bottom:9px"><span style="font-size:11px;color:var(--text-tertiary);width:82px;flex-shrink:0;text-align:right">Points won</span><span style="font-size:11px;font-weight:500;width:34px;flex-shrink:0;color:'+col+'">'+pct+'%</span><div style="flex:1;display:flex;height:5px;border-radius:3px;overflow:hidden"><div style="width:'+pct+'%;height:5px;background:'+col+'"></div><div style="flex:1;height:5px;background:var(--bg-secondary)"></div></div><span style="font-size:11px;color:var(--text-tertiary);width:34px;text-align:right">'+opc+'%</span></div>';var nrgLeft=P.energy;var nrgBar='<div style="display:flex;align-items:center;gap:7px;margin-bottom:9px"><span style="font-size:11px;color:var(--text-tertiary);width:82px;flex-shrink:0;text-align:right">Energy left</span><div style="flex:1;background:var(--bg-secondary);border-radius:3px;height:5px"><div style="width:'+nrgLeft+'%;height:5px;border-radius:3px;background:'+ec(nrgLeft)+'"></div></div><span style="font-size:11px;font-weight:500;color:'+ec(nrgLeft)+';width:42px;text-align:right">'+nrgLeft+'/100</span></div>';var nx='';if(r.win&&ms.ri+1<activeRounds.length){var nr=activeRounds[ms.ri+1];var nsd=nr.oppSeed?' ('+nr.oppSeed+')':'';var st=STYLES_LIST[Math.floor(Math.random()*STYLES_LIST.length)];var notes=SCOUT[st]||SCOUT['All-court'];nx='<div class="no-box"><div class="no-lbl">Next · '+nr.rnd+'</div><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div style="width:26px;height:26px;border-radius:50%;background:var(--bg-danger);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--text-danger)">'+nr.opp.split(' ').map(function(w){return w[0];}).join('').slice(0,2)+'</div><div><div style="font-size:12px;font-weight:500;color:var(--text-primary)">'+nr.opp+nsd+'</div><div style="font-size:10px;color:var(--text-tertiary)">#'+nr.oppRank+' · '+st+' · −'+nr.nrg+' energy</div></div></div><div style="display:flex;gap:4px;flex-wrap:wrap">'+notes.map(function(s){return '<span class="pill p-w">'+s+'</span>';}).join('')+'</div></div>';}d.innerHTML='<div style="font-size:10px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px">'+lbl+(r.isBo5?' · Best of 5':'')+ps+'</div>'+sb+chips+stat+nrgBar+nx;feed.insertBefore(d,feed.firstChild);document.getElementById('m-scroll').scrollTop=0;}
-function finT(){P.funds=P.funds+ms.pr-(wkD.tc||0)-P.coachCost;P.pts+=ms.pts;P.cPts+=ms.pts;P.rank=pts2rank(P.cPts);P.wins+=ms.w;P.losses+=ms.l;var lastRound=activeRounds[ms.ri-1];if(lastRound&&lastRound.rnd==='F'){P.finals++;if(lastRound.win){P.titles++;if(wkD.grandSlam)P.slamTitles++;}}Object.keys(P.attrs).forEach(function(k){P.attrs[k]=Math.min(99,P.attrs[k]+0.5);});var histResult=lastRound.rnd+(lastRound.win?' title':(lastRound.rnd==='F'?' final':' exit'));P.history.push({wk:wkD.wk,label:wkD.label,result:histResult,pts:ms.pts});var nw=WKS[wi+1];var f=document.getElementById('match-footer');f.style.display='block';f.innerHTML='<button style="width:100%;padding:12px;border-radius:12px;background:var(--green);color:#fff;border:none;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit" onclick="hDone()">Done — plan '+(nw?nw.date:'end of season')+' →</button>';}
+function bDraw(){document.getElementById('draw-rows').innerHTML=activeRounds.map(function(r,i){var past=i<ms.ri,now=i===ms.ri;var dot=past?(r.win?'background:var(--g)':'background:var(--td)'):now?'background:var(--ti)':'background:var(--bm)';var sd=r.oppSeed?' ('+r.oppSeed+')':'';var opp=past?r.opp+sd+' <span style="color:var(--tt);font-size:11px">#'+r.oppRank+'</span>':'<span style="color:var(--tt)">TBD</span>';var sc=past?'<span style="font-size:11px;font-weight:500;color:'+(r.win?'var(--g)':'var(--td)')+'">'+ss(r.sets)+'</span>':'';return '<div class="dr"><div style="width:8px;height:8px;border-radius:50%;flex-shrink:0;'+dot+'"></div><div style="font-size:11px;color:var(--tt);width:28px;flex-shrink:0">'+r.rnd+'</div><div style="flex:1;color:var(--tp)">'+opp+'</div>'+sc+'</div>';}).join('');}
+function setFooter(){var f=document.getElementById('match-footer');var r=activeRounds[ms.ri];if(!r){f.style.display='none';return;}var sd=r.oppSeed?' ('+r.oppSeed+')':'';var ps=r.pSeed?' · Seed '+r.pSeed:'';f.style.display='block';f.innerHTML='<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--tt);margin-bottom:8px"><span>Energy: <strong style="color:'+ec(P.energy)+'">'+P.energy+'/100</strong></span><span>This match: <strong style="color:var(--td)">−'+r.nrg+'</strong></span></div><button style="width:100%;padding:12px;border-radius:12px;background:var(--g);color:#fff;border:none;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit" onclick="playRound()">Play '+r.rnd+' vs '+r.opp+sd+' #'+r.oppRank+ps+'</button>';}
+function playRound(){var r=activeRounds[ms.ri];document.getElementById('match-feed').querySelectorAll('.mc-full').forEach(function(mc){var won=mc.getAttribute('data-won')==='1',lbl=mc.getAttribute('data-lbl')||'',sc=mc.getAttribute('data-score')||'';var mini=document.createElement('div');mini.className='mc-mini';mini.innerHTML='<span style="font-size:12px;font-weight:500;color:'+(won?'var(--g)':'var(--ts)')+'">'+lbl+'</span><span style="font-size:12px;color:'+(won?'var(--g)':'var(--td)')+'">'+sc+'</span>';mc.replaceWith(mini);});rCard(r);P.energy=Math.max(0,P.energy-r.nrg);ms.pts+=r.pts;ms.pr+=r.prize;ms.nr+=r.nrg;if(r.win)ms.w++;else ms.l++;ms.ri++;bDraw();if(r.win&&ms.ri<activeRounds.length){setFooter();document.getElementById('m-scroll').scrollTop=0;}else finT();}
+function rCard(r){var feed=document.getElementById('match-feed');var d=document.createElement('div');d.className='mc-full';var sd=r.oppSeed?' ('+r.oppSeed+')':'';var ps=r.pSeed?' · Seed '+r.pSeed:'';var lbl=r.rnd+' · '+r.opp+sd;d.setAttribute('data-won',r.win?'1':'0');d.setAttribute('data-lbl',lbl);d.setAttribute('data-score',ss(r.sets));var myW=r.sets.filter(function(s){return s[0]>s[1];}).length;var opW=r.sets.filter(function(s){return s[1]>s[0];}).length;var sb='<div class="sboard"><div class="sbh"><div class="sbnc">Player</div>'+r.sets.map(function(_,i){return '<div class="sbsc">S'+(i+1)+'</div>';}).join('')+'<div class="sbsc" style="font-weight:500">Sets</div></div><div class="sbrow '+(r.win?'wr':'')+'"><div class="sbpl '+(r.win?'w':'l')+'">'+P.name+(r.pSeed?' ('+r.pSeed+')':'')+'</div>'+r.sets.map(function(s){var w=s[0]>s[1],tb=(s[0]===7&&s[1]===6)||(s[0]===6&&s[1]===7);return '<div class="sbgm '+(w?'wg':'lg')+'">'+s[0]+(tb?'<sup style="font-size:8px">TB</sup>':'')+'</div>';}).join('')+'<div style="width:30px;text-align:center;font-size:13px;font-weight:500;color:'+(r.win?'var(--g)':'var(--ts)')+'">'+myW+'</div></div><div class="vsd">vs</div><div class="sbrow '+(!r.win?'wr':'')+'"><div class="sbpl '+(!r.win?'w':'l')+'">'+r.opp+sd+'</div>'+r.sets.map(function(s){var w=s[1]>s[0],tb=(s[0]===7&&s[1]===6)||(s[0]===6&&s[1]===7);return '<div class="sbgm '+(w?'wg':'lg')+'">'+s[1]+(tb?'<sup style="font-size:8px">TB</sup>':'')+'</div>';}).join('')+'<div style="width:30px;text-align:center;font-size:13px;font-weight:500;color:'+(!r.win?'var(--g)':'var(--ts)')+'">'+opW+'</div></div></div>';var chips='<div style="display:flex;gap:5px;margin-bottom:9px"><div style="flex:1;background:var(--bs);border-radius:8px;padding:6px;text-align:center"><div style="font-size:12px;font-weight:500;color:'+(r.win?'var(--g)':'var(--tw)')+'">+'+r.pts+'</div><div style="font-size:9px;color:var(--tt)">pts</div></div><div style="flex:1;background:var(--bs);border-radius:8px;padding:6px;text-align:center"><div style="font-size:12px;font-weight:500;color:var(--tw)">'+ff(r.prize)+'</div><div style="font-size:9px;color:var(--tt)">prize</div></div><div style="flex:1;background:var(--bd);border-radius:8px;padding:6px;text-align:center"><div style="font-size:12px;font-weight:500;color:var(--td)">−'+r.nrg+'</div><div style="font-size:9px;color:var(--td)">energy</div></div>'+(r.isBo5?'<div style="flex:1;background:var(--bi);border-radius:8px;padding:6px;text-align:center"><div style="font-size:11px;font-weight:500;color:var(--ti)">Bo5</div><div style="font-size:9px;color:var(--ti)">Slam</div></div>':'')+'</div>';var pct=r.pct,opc=100-pct,col=pct>=50?'var(--g)':'var(--td)';var stat='<div style="display:flex;align-items:center;gap:7px;margin-bottom:9px"><span style="font-size:11px;color:var(--tt);width:82px;flex-shrink:0;text-align:right">Points won</span><span style="font-size:11px;font-weight:500;width:34px;flex-shrink:0;color:'+col+'">'+pct+'%</span><div style="flex:1;display:flex;height:5px;border-radius:3px;overflow:hidden"><div style="width:'+pct+'%;height:5px;background:'+col+'"></div><div style="flex:1;height:5px;background:var(--bs)"></div></div><span style="font-size:11px;color:var(--tt);width:34px;text-align:right">'+opc+'%</span></div>';var nrgLeft=P.energy;var nrgBar='<div style="display:flex;align-items:center;gap:7px;margin-bottom:9px"><span style="font-size:11px;color:var(--tt);width:82px;flex-shrink:0;text-align:right">Energy left</span><div style="flex:1;background:var(--bs);border-radius:3px;height:5px"><div style="width:'+nrgLeft+'%;height:5px;border-radius:3px;background:'+ec(nrgLeft)+'"></div></div><span style="font-size:11px;font-weight:500;color:'+ec(nrgLeft)+';width:42px;text-align:right">'+nrgLeft+'/100</span></div>';var nx='';if(r.win&&ms.ri+1<activeRounds.length){var nr=activeRounds[ms.ri+1];var nsd=nr.oppSeed?' ('+nr.oppSeed+')':'';var st=STYLES_LIST[Math.floor(Math.random()*STYLES_LIST.length)];var notes=SCOUT[st]||SCOUT['All-court'];nx='<div class="nob"><div class="nol">Next · '+nr.rnd+'</div><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div style="width:26px;height:26px;border-radius:50%;background:var(--bd);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--td)">'+nr.opp.split(' ').map(function(w){return w[0];}).join('').slice(0,2)+'</div><div><div style="font-size:12px;font-weight:500;color:var(--tp)">'+nr.opp+nsd+'</div><div style="font-size:10px;color:var(--tt)">#'+nr.oppRank+' · '+st+' · −'+nr.nrg+' energy</div></div></div><div style="display:flex;gap:4px;flex-wrap:wrap">'+notes.map(function(s){return '<span class="pill pw">'+s+'</span>';}).join('')+'</div></div>';}d.innerHTML='<div style="font-size:10px;color:var(--tt);text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px">'+lbl+(r.isBo5?' · Best of 5':'')+ps+'</div>'+sb+chips+stat+nrgBar+nx;feed.insertBefore(d,feed.firstChild);document.getElementById('m-scroll').scrollTop=0;}
+function finT(){P.funds=P.funds+ms.pr-(wkD.tc||0)-P.coachCost;P.pts+=ms.pts;P.cPts+=ms.pts;P.rank=pts2rank(P.cPts);P.wins+=ms.w;P.losses+=ms.l;var lastRound=activeRounds[ms.ri-1];if(lastRound&&lastRound.rnd==='F'){P.finals++;if(lastRound.win){P.titles++;if(wkD.grandSlam)P.slamTitles++;}}Object.keys(P.attrs).forEach(function(k){P.attrs[k]=Math.min(99,P.attrs[k]+0.5);});var histResult=lastRound.rnd+(lastRound.win?' title':(lastRound.rnd==='F'?' final':' exit'));P.history.push({wk:wkD.wk,label:wkD.label,result:histResult,pts:ms.pts});var nw=WKS[wi+1];var f=document.getElementById('match-footer');f.style.display='block';f.innerHTML='<button style="width:100%;padding:12px;border-radius:12px;background:var(--g);color:#fff;border:none;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit" onclick="hDone()">Done — plan '+(nw?nw.date:'end of season')+' →</button>';}
 function hDone(){document.getElementById('match-footer').style.display='none';document.getElementById('match-footer').innerHTML='';adv();}
 
-/* ── REVIEW ── */
-function bRev(){var o=ovr(),wp=P.wins+P.losses>0?Math.round(P.wins/(P.wins+P.losses)*100):0;document.getElementById('rv-body').innerHTML='<div style="background:var(--bg-success);border-radius:12px;padding:14px;margin-bottom:10px;border:0.5px solid var(--border-success)"><div style="font-size:11px;color:var(--text-success);opacity:.8;margin-bottom:3px">Season 1 · '+P.name+' · '+P.nation+'</div><div style="font-size:44px;font-weight:500;color:var(--green);line-height:1">#'+P.rank+'</div><div style="font-size:13px;color:var(--text-success);opacity:.8;margin-top:4px">Started #'+P.rank+' · '+P.pts+' pts · '+P.wins+'W–'+P.losses+'L</div><div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:9px"><span class="pill p-g">'+wp+'% win rate</span><span class="pill p-g">Overall '+o+'</span>'+(P.titles>0?'<span class="pill p-g">'+P.titles+' title'+(P.titles>1?'s':'')+'</span>':'')+(P.slamTitles>0?'<span class="pill p-g">'+P.slamTitles+' Slam'+(P.slamTitles>1?'s':'')+'</span>':'')+'</div></div><div class="card"><div class="sl">Season stats</div><div class="stat-row"><span style="color:var(--text-secondary)">Ranking pts</span><span style="color:var(--green);font-weight:500">'+P.pts+'</span></div><div class="stat-row"><span style="color:var(--text-secondary)">Wins</span><span style="font-weight:500;color:var(--text-primary)">'+P.wins+'</span></div><div class="stat-row"><span style="color:var(--text-secondary)">Finals reached</span><span style="font-weight:500;color:'+(P.finals>0?'var(--text-warning)':'var(--text-tertiary)')+'">'+P.finals+'</span></div><div class="stat-row"><span style="color:var(--text-secondary)">Titles won</span><span style="font-weight:500;color:'+(P.titles>0?'var(--green)':'var(--text-tertiary)')+'">'+P.titles+'</span></div><div class="stat-row"><span style="color:var(--text-secondary)">Grand Slam titles</span><span style="font-weight:500;color:'+(P.slamTitles>0?'var(--green)':'var(--text-tertiary)')+'">'+P.slamTitles+'</span></div><div class="stat-row"><span style="color:var(--text-secondary)">Closing balance</span><span style="color:var(--green);font-weight:500">'+ff(P.funds)+'</span></div></div><div class="card"><div class="sl">Final attributes</div>'+Object.keys(AN).map(function(k){var v=Math.round(P.attrs[k]);return '<div class="at-row"><div class="at-top2"><span style="font-size:11px;color:var(--text-primary)">'+AN[k]+'</span><span style="font-size:11px;font-weight:500">'+v+'</span></div><div style="background:var(--bg-secondary);border-radius:3px;height:5px"><div style="width:'+v+'%;height:5px;border-radius:3px;background:'+AC[k]+'"></div></div></div>';}).join('')+'</div><button class="btn" onclick="restartGame()" style="margin-top:4px">Play again →</button>';}
-function restartGame(){C={name:'',nation:'',nb:{},style:'',goal:'',goalLbl:'',age:18,attrs:{},bspt:{},ck:'',cc:0};curAge=18;document.getElementById('ni').value='';document.getElementById('nb').disabled=true;goScr('s0');}
+/* ══════════════════════════════════════════
+   CAREER SUMMARY
+══════════════════════════════════════════ */
+function showCareerSummary(){
+  var totalW=CAREER.totalWins+P.wins;
+  var totalL=CAREER.totalLosses+P.losses;
+  var totalT=CAREER.totalTitles+P.titles;
+  var totalS=CAREER.totalSlams+P.slamTitles;
+  var bestRank=Math.min(CAREER.bestRank,P.rank);
+  var wp=totalW+totalL>0?Math.round(totalW/(totalW+totalL)*100):0;
+  var yearsPlayed=P.age-P.startAge+1;
+  var o=ovr();
+  document.getElementById('cr-body').innerHTML=
+    '<div style="background:var(--bsu);border-radius:12px;padding:16px;margin-bottom:10px;border:0.5px solid var(--bsu2)">'
+    +'<div style="font-size:11px;color:var(--tsu);opacity:.8;margin-bottom:4px">'+P.name+' · '+P.nation+' · '+SL[P.style]+'</div>'
+    +'<div style="font-size:13px;color:var(--tsu);margin-bottom:4px">Age '+P.startAge+' → '+P.age+' · '+yearsPlayed+' seasons</div>'
+    +'<div style="font-size:38px;font-weight:500;color:var(--g);line-height:1;margin-bottom:6px">Best #'+bestRank+'</div>'
+    +'<div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:6px">'
+    +(totalT>0?'<span class="pill pg">'+totalT+' title'+(totalT>1?'s':'')+'</span>':'')
+    +(totalS>0?'<span class="pill pg">'+totalS+' Grand Slam'+(totalS>1?'s':'')+'</span>':'')
+    +'<span class="pill pg">'+wp+'% win rate</span>'
+    +'<span class="pill pg">'+ff(P.funds)+' career earnings</span>'
+    +'</div></div>'
+    +'<div class="card"><div class="sl">Career totals</div>'
+    +'<div class="sr"><span style="color:var(--ts)">Seasons played</span><span style="font-weight:500;color:var(--tp)">'+yearsPlayed+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Total wins</span><span style="font-weight:500;color:var(--tp)">'+totalW+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Win rate</span><span style="font-weight:500;color:var(--tp)">'+wp+'%</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Titles</span><span style="font-weight:500;color:'+(totalT>0?'var(--g)':'var(--tt)')+'">'+totalT+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Grand Slams</span><span style="font-weight:500;color:'+(totalS>0?'var(--g)':'var(--tt)')+'">'+totalS+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Best ranking</span><span style="font-weight:500;color:var(--g)">#'+bestRank+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Final balance</span><span style="font-weight:500;color:var(--g)">'+ff(P.funds)+'</span></div>'
+    +'</div>'
+    +'<div class="card"><div class="sl">Season by season</div>'
+    +CAREER.seasons.map(function(s){
+      return '<div class="career-row">'
+        +'<div style="width:20px;font-size:10px;color:var(--tt);flex-shrink:0">S'+s.num+'</div>'
+        +'<div style="width:32px;font-size:11px;color:var(--tt);flex-shrink:0">Age '+s.age+'</div>'
+        +'<div style="flex:1;font-size:11px;color:var(--tp)">#'+s.rank+' · '+s.wins+'W</div>'
+        +'<div style="font-size:11px;color:var(--g);font-weight:500">'+s.pts+' pts'+(s.titles>0?' · '+s.titles+'T':'')+'</div>'
+        +'</div>';
+    }).join('')
+    +'</div>'
+    +'<div class="card"><div class="sl">Final attributes (age '+P.age+')</div>'
+    +Object.keys(AN).map(function(k){var v=Math.round(P.attrs[k]);return '<div class="at-row"><div class="at-top2"><span style="font-size:11px;color:var(--tp)">'+AN[k]+'</span><span style="font-size:11px;font-weight:500">'+v+'</span></div><div style="background:var(--bs);border-radius:3px;height:5px"><div style="width:'+v+'%;height:5px;border-radius:3px;background:'+AC[k]+'"></div></div></div>';}).join('')
+    +'</div>'
+    +'<button class="btn" onclick="restartGame()">New career →</button>';
+  goScr('sc-career');
+}
+
+function restartGame(){
+  C={name:'',nation:'',nb:{},style:'',goal:'',goalLbl:'',age:18,attrs:{},bspt:{},ck:'',cc:0};
+  curAge=18;
+  document.getElementById('ni').value='';
+  document.getElementById('nb').disabled=true;
+  document.getElementById('ad').textContent='18';
+  document.getElementById('ah').textContent=AH[18];
+  goScr('s0');
+}
 </script>
 </body>
 </html>
