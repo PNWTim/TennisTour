@@ -285,6 +285,18 @@ body{background:var(--bt);min-height:100vh;display:flex;align-items:flex-start;j
       <div class="sl">Season <span id="off-snum">—</span> summary</div>
       <div id="off-season-stats"></div>
     </div>
+    <div class="card" id="off-career-card" style="display:none">
+      <div class="sl">Career history</div>
+      <div style="display:grid;grid-template-columns:30px 34px 1fr 60px 50px;gap:0;margin-bottom:6px;padding-bottom:5px;border-bottom:0.5px solid var(--bl)">
+        <span style="font-size:10px;color:var(--tt)">Szn</span>
+        <span style="font-size:10px;color:var(--tt)">Age</span>
+        <span style="font-size:10px;color:var(--tt)">W–L</span>
+        <span style="font-size:10px;color:var(--tt);text-align:center">F/T/GS</span>
+        <span style="font-size:10px;color:var(--tt);text-align:right">Rank</span>
+      </div>
+      <div id="off-career-rows"></div>
+      <div style="border-top:1px solid var(--bl);margin-top:6px;padding-top:8px" id="off-career-totals"></div>
+    </div>
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
         <div class="sl" style="margin-bottom:0">Offseason training</div>
@@ -326,6 +338,11 @@ body{background:var(--bt);min-height:100vh;display:flex;align-items:flex-start;j
         <div class="sb"><div class="sv" id="d-pts">0</div><div class="sl2">Pts</div></div>
         <div class="sb"><div class="sv" id="d-funds">—</div><div class="sl2">Funds</div></div>
         <div class="sb"><div class="sv" id="d-ovr">—</div><div class="sl2">Overall</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:5px">
+        <div class="sb"><div class="sv" id="d-finals">0</div><div class="sl2">Finals</div></div>
+        <div class="sb"><div class="sv" id="d-titles">0</div><div class="sl2">Titles</div></div>
+        <div class="sb"><div class="sv" id="d-slams">0</div><div class="sl2">Slams</div></div>
       </div>
     </div>
     <div style="background:var(--bp);border-radius:var(--rm);padding:7px 11px;margin-bottom:9px;display:flex;align-items:center;gap:9px;border:0.5px solid var(--bl)">
@@ -552,8 +569,46 @@ function showOffseason(){
     '<div class="sr"><span style="color:var(--ts)">Record</span><span style="font-weight:500;color:var(--tp)">'+P.wins+'W–'+P.losses+'L ('+wp+'%)</span></div>'
     +'<div class="sr"><span style="color:var(--ts)">Ranking pts</span><span style="color:var(--g);font-weight:500">'+P.pts+'</span></div>'
     +'<div class="sr"><span style="color:var(--ts)">Year-end rank</span><span style="color:var(--g);font-weight:500">#'+P.rank+'</span></div>'
-    +'<div class="sr"><span style="color:var(--ts)">Titles</span><span style="font-weight:500;color:'+(P.titles>0?'var(--g)':'var(--tt)')+'">'+P.titles+(P.slamTitles>0?' ('+P.slamTitles+' Slam)':'')+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Finals reached</span><span style="font-weight:500;color:'+(P.finals>0?'var(--tw)':'var(--tt)')+'">'+P.finals+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Titles won</span><span style="font-weight:500;color:'+(P.titles>0?'var(--g)':'var(--tt)')+'">'+P.titles+'</span></div>'
+    +'<div class="sr"><span style="color:var(--ts)">Grand Slam titles</span><span style="font-weight:500;color:'+(P.slamTitles>0?'var(--g)':'var(--tt)')+'">'+P.slamTitles+'</span></div>'
     +'<div class="sr"><span style="color:var(--ts)">Balance</span><span style="color:var(--g);font-weight:500">'+ff(P.funds)+'</span></div>';
+
+  /* career history table — only show if at least 1 prior season logged */
+  var careerCard=document.getElementById('off-career-card');
+  if(CAREER.seasons.length>0){
+    careerCard.style.display='block';
+    var totalW=0,totalL=0,totalF=0,totalT=0,totalS=0,bestRk=999;
+    document.getElementById('off-career-rows').innerHTML=CAREER.seasons.map(function(s){
+      totalW+=s.wins;totalL+=s.losses;totalF+=(s.finals||0);totalT+=s.titles;totalS+=s.slams;
+      if(s.rank<bestRk)bestRk=s.rank;
+      var fts=(s.finals||0)+' / '+s.titles+' / '+s.slams;
+      var hasTrophy=s.titles>0||s.slams>0;
+      return '<div style="display:grid;grid-template-columns:30px 34px 1fr 60px 50px;gap:0;padding:5px 0;border-bottom:0.5px solid var(--bl)">'
+        +'<span style="font-size:11px;color:var(--tt)">S'+s.num+'</span>'
+        +'<span style="font-size:11px;color:var(--tt)">'+s.age+'</span>'
+        +'<span style="font-size:11px;color:var(--tp)">'+s.wins+'–'+s.losses+'</span>'
+        +'<span style="font-size:11px;font-weight:500;text-align:center;color:'+(hasTrophy?'var(--g)':'var(--tt)')+'">'+fts+'</span>'
+        +'<span style="font-size:11px;font-weight:500;text-align:right;color:var(--g)">#'+s.rank+'</span>'
+        +'</div>';
+    }).join('');
+    /* career totals row */
+    var twp=totalW+totalL>0?Math.round(totalW/(totalW+totalL)*100):0;
+    document.getElementById('off-career-totals').innerHTML=
+      '<div style="display:flex;justify-content:space-between;margin-bottom:5px">'
+        +'<span style="font-size:11px;font-weight:500;color:var(--tp)">Career totals</span>'
+        +'<span style="font-size:11px;color:var(--tt)">'+CAREER.seasons.length+' seasons</span>'
+      +'</div>'
+      +'<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px">'
+        +'<div class="sb"><div style="font-size:13px;font-weight:500;color:var(--tp)">'+totalW+'W</div><div class="sl2">Wins</div></div>'
+        +'<div class="sb"><div style="font-size:13px;font-weight:500;color:'+(totalF>0?'var(--tw)':'var(--tt)')+'">'+totalF+'</div><div class="sl2">Finals</div></div>'
+        +'<div class="sb"><div style="font-size:13px;font-weight:500;color:'+(totalT>0?'var(--g)':'var(--tt)')+'">'+totalT+'</div><div class="sl2">Titles</div></div>'
+        +'<div class="sb"><div style="font-size:13px;font-weight:500;color:'+(bestRk<999?'var(--g)':'var(--tt)')+'">'+totalS+'</div><div class="sl2">Slams</div></div>'
+      +'</div>'
+      +'<div style="margin-top:6px;font-size:11px;color:var(--tt)">Best ranking: <strong style="color:var(--g)">#'+bestRk+'</strong> · Win rate: <strong style="color:var(--tp)">'+twp+'%</strong></div>';
+  } else {
+    careerCard.style.display='none';
+  }
 
   /* age decay */
   offPool=10;offBspt={};Object.keys(AN).forEach(function(k){offBspt[k]=0;});
@@ -662,6 +717,9 @@ function rdash(){
   document.getElementById('d-pts').textContent=P.pts;
   document.getElementById('d-funds').textContent=ff(P.funds);
   document.getElementById('d-ovr').textContent=ovr();
+  document.getElementById('d-finals').textContent=P.finals||0;
+  var _te=document.getElementById('d-titles');_te.textContent=P.titles||0;_te.style.color=(P.titles>0)?'var(--g)':'var(--tp)';
+  var _se=document.getElementById('d-slams');_se.textContent=P.slamTitles||0;_se.style.color=(P.slamTitles>0)?'var(--g)':'var(--tp)';
   var ec2=ec(P.energy);
   document.getElementById('d-ebar').style.cssText='height:7px;border-radius:3px;background:'+ec2+';width:'+P.energy+'%;transition:width .4s';
   document.getElementById('d-eval').textContent=P.energy+'/100';document.getElementById('d-eval').style.color=ec2;
@@ -704,7 +762,7 @@ function endSeason(){
   CAREER.totalTitles+=P.titles;CAREER.totalSlams+=P.slamTitles;
   if(P.rank<CAREER.bestRank)CAREER.bestRank=P.rank;
   CAREER.careerPts+=P.pts;
-  CAREER.seasons.push({num:seasonNum,age:P.age,rank:P.rank,wins:P.wins,losses:P.losses,pts:P.pts,titles:P.titles,slams:P.slamTitles,funds:P.funds});
+  CAREER.seasons.push({num:seasonNum,age:P.age,rank:P.rank,wins:P.wins,losses:P.losses,pts:P.pts,finals:P.finals,titles:P.titles,slams:P.slamTitles,funds:P.funds});
   showOffseason();
 }
 
